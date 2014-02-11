@@ -1,6 +1,6 @@
 {
   "name": "tistory-doobedoo-grunt",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "author": "Ungki.H <ungki.h@gmail.com>",
   "homepage": "http://markquery.com",
   "repository": {
@@ -8,21 +8,27 @@
     "url": "https://github.com/markquery/tistory-doobedoo.git"
   },
   "bugs": {
-    "url" : "http://markquery.com"
+    "url": "http://markquery.com"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "http://opensource.org/licenses/MIT"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.10.24"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-watch": "~0.5.2",
-    "grunt-recess": "~0.3.5"
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.9.0"
+  },
+  "dependencies": {
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.3.2"
   }
 }

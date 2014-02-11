@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <skin>
 	<information>
-		<name>markquery skeleton - Doo Be Doo</name>
-		<version>1.2.1</version>
+		<name>마크쿼리 skeleton - Doo Be Doo</name>
+		<version>3.0.0</version>
 		<description>
-			<![CDATA[마크쿼리 skeleton - Doo Be Doo입니다]]>
+			<![CDATA[마크쿼리 skeleton - Doo Be Doo]]>
 		</description>
 		<license>
 			<![CDATA[http://markquery.github.io/license]]>
 		</license>
 		<tags>
-			<tag>콘텐츠 편집디자인</tag> <tag>HTML5</tag> <tag>CSS3</tag> <tag>bootstrap</tag>
+			<tag>마크쿼리</tag> <tag>markquery</tag> <tag>콘텐츠 편집디자인</tag> <tag>HTML5</tag> <tag>CSS3</tag> <tag>bootstrap</tag>
 		</tags>
 	</information>
 <author>

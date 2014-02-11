@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="ko">
+<!--[if IE 7 ]>    <html lang="ko" class="no-js ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <html lang="ko" class="no-js ie8"> <![endif]--> 
+<!--[if IE 9 ]>    <html lang="ko" class="no-js ie9"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ko" class="no-js"> <!--<![endif]--> 
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,97 +10,166 @@
 	<meta name="description" content="[##_desc_##]">
 	<meta name="keywords" content="your, site, keyowrd, here">
 	<meta name="author" content="[##_blogger_##]">
-
 	<title>[##_page_title_##] | [##_title_##]</title>
-
 	<link rel="author" href="./images/humans.txt">
 	<link rel="profile" href="http://microformats.org/profile/hcard">
 	<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]">
-
-	<link href="./images/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" media="screen" type="text/css" href="./style.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-
-	<link rel="shortcut icon" href="[##_blog_link_##]favicon.ico">
+	<link rel="shortcut icon" href="./images/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon-57x57-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/apple-touch-icon-72x72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./images/apple-touch-icon-114x114-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/apple-touch-icon-144x144-precomposed.png">
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<link href="./images/bootstrap.css" rel="stylesheet">
+	<link href="./images/theme.css" rel="stylesheet">
+	<link rel="stylesheet" media="screen" type="text/css" href="./style.css">
+	<!-- HTML5 shiv IE8 support of HTML5 elements and media queries / ie.css for tistory -->
 	<!--[if lt IE 9]>
-		<script async src="./images/html5shiv.js"></script>
+		<script async src="./images/html5shiv-3.7.0.js"></script>
 		<link href="./images/ie.css" rel="stylesheet">
-		<script>document.createElement('main');</script>
-	<![endif]-->
-
-	<!--[if IE 7]>
-	  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
 	<![endif]-->
 </head>
-
 <body>
 <s_t3>
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<!--[if lt IE 8]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.<br>오래된 브라우저를 사용하는 것은 컴퓨터를 안전하지 않게 만듭니다. <a href="http://browsehappy.com/">업그레이드</a> 또는 더 좋은 인터넷 경험을 위해 <a href="http://www.google.com/chromeframe/?redirect=true">크롬</a>을 사용하세요.</p>
 <![endif]-->
 
 <a href="#content" class="sr-only">skip to content</a>
 
-<header class="navbar navbar-fixed-top navbar-default" role="banner">
-	<div class="container skeleton-nav">
-		<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="[##_blog_link_##]">HOME</a>
-		</div>
-			<nav class="collapse navbar-collapse" role="navigation">
-			<ul class="nav navbar-nav">
-			<li typeof="sioc:Page" about="[##_blog_link_##]category/"><a property="dc:title" href="[##_blog_link_##]category/">category 1</a></li>
-			<li typeof="sioc:Page" about="[##_blog_link_##]category/"><a property="dc:title" href="[##_blog_link_##]category/">category 2</a></li>
-			<li typeof="sioc:Page" about="[##_guestbook_link_##]"><a property="dc:title" href="[##_guestbook_link_##]">GuestBook</a></li>
-				<li>
-				<s_sidebar_element>
-				<s_search>
-				<!-- Search -->
-				<form class="navbar-form">
-				<input role="search" type="text" class="form-control" placeholder="Search" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
-				</form>
-				</s_search>
-				</s_sidebar_element>
-				</li>
-			</ul>
-			</nav>
-	</div>
-</header>
-
-<div class="wrapper skeleton-header"><!-- header layout : wrapper --> 
-<div class="container"><!-- header layout : container --> 
+<div class="container-fluid skeleton-nav">
 <div class="row">
 <div class="col-sm-12">
-	<hgroup>
+	<!-- Nav -->
+	<nav class="nav" role="navigation">
+		<ul class="nav-list">
+		    <!-- item 1 -->
+			<li class="nav-item">
+			<a href="/">Home</a>
+				<ul class="nav-submenu">
+					<li class="nav-submenu-item">
+					<a href="/">Submenu item 1</a>
+					</li>
+					<li class="nav-submenu-item">
+					<a href="/">Submenu item 2</a>
+					</li>
+					<li class="nav-submenu-item">
+					<a href="/">Submenu item 3</a>
+					</li>
+					<li class="nav-submenu-item">
+					<a href="">Submenu item 4</a>
+					</li>
+				</ul>
+			</li>
+			<!-- item 2 -->
+			<li class="nav-item">
+			<a href="/">About</a>
+			</li>
+			<!-- item 3 -->
+			<li class="nav-item">
+			<a href="/">Services</a>
+				<ul class="nav-submenu">
+					<li class="nav-submenu-item">
+					<a href="/">Submenu item 1</a>
+					</li>
+					<li class="nav-submenu-item">
+					<a href="/">Submenu item 2</a>
+					</li>
+					<li class="nav-submenu-item">
+					<a href="/">Submenu item 3</a>
+					</li>
+					<li class="nav-submenu-item">
+					<a href="/">Submenu item 4</a>
+					</li>
+				</ul>
+			</li>
+			<!-- item 4 -->
+			<li class="nav-item">
+			<a href="/">Portfolio</a>
+			</li>
+			<!-- item 5 -->
+			<li class="nav-item">
+			<a href="/">Testimonials</a>
+			</li>
+			<!-- item 6 -->
+			<li class="nav-item">
+			<a href="/">Contact</a>
+			</li>
+		</ul>
+	</nav><!-- /.nav -->
+</div><!-- /.col -->
+</div><!-- /.row -->
+</div><!-- /.container-fluid skeleton-nav -->
+
+<div class="container-fluid skeleton-header">
+<div class="row col-nospace">
+<div class="col-sm-12">
+	<section id="header">
+	<header class="banner" role="banner">
+		<hgroup>
 		<h1><a title="home" href="[##_blog_link_##]">[##_title_##]</a></h1>
 		<h2>[##_desc_##]</h2>
-	</hgroup>
-</div>
-</div>
-</div><!-- /.container -->
-</div><!-- /.wrapper -->
+		</hgroup>
+	</header>
+	</section>
+</div><!-- /.col -->
+</div><!-- /.row -->
+</div><!-- /.container-fluid skeleton-header -->
 
-<div class="wrapper"><!-- main layout : wrapper --> 
-<main role="main"  id="content">
+<div class="container-fluid skeleton-mid-banner">
+<section id="middle">
+<div class="row">
+<div class="col-sm-9 mid-banner">
+<div class="col-sm-nospace-3 col-sm-offset-9">
+	<div class="responsive-right2left">
+		<div class="btn-group">
+			<button type="button" class="dropdown-toggle btn-mq btn-xs" data-toggle="dropdown"><span class="font svgicon"></span></button>
+				<ul class="dropdown-menu">
+				<li><a href="javascript:changeFontFamily('맑은 고딕, Malgun Gothic, sans-serif');">맑은고딕</a></li>
+				<li><a href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
+				<li><a href="javascript:changeFontFamily('다음_Regular, daum_Regular, sans-serif');">다음</a></li>
+				<li><a href="javascript:changeFontFamily('굴림, Gulim, sans-serif');">굴림</a></li>
+				<li><a href="javascript:changeFontFamily('돋움, dotum, sans-serif');">돋움</a></li>
+				<li><a href="javascript:changeFontFamily('바탕, Batang, sans-serif');">바탕</a></li>
+				<li><a href="javascript:changeFontFamily('Arial, Helvetica, sans-serif');">Arial</a></li>
+				<li><a href="javascript:changeFontFamily('Georgia, serif');">Georgia</a></li>
+				<li><a href="javascript:changeFontFamily('Times New Roman, Times, serif');">Times</a><li>
+				<li><a href="javascript:changeFontFamily('Comic Sans MS, cursive, sans-serif');">Comic Sans MS</a></li>
+				<li><a href="javascript:changeFontFamily('Lucida Console, Monaco, monospace');">Lucida Console</a></li>
+				<li><a href="javascript:changeFontFamily('Courier New, Courier, monospace');">Courier New</a></li>
+				<li class="divider"></li>
+				<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <span class="help svgicon"></span></a></li>
+				</ul>
+			<button type="button" class="jfontsize-p btn-mq btn-xs"><span class="plus svgicon"></span></button>
+			<button type="button" class="jfontsize-m btn-mq btn-xs"><span class="minus svgicon"></span></button>
+			<button type="button" class="btn-mq btn-xs" onclick="btnPrint()"><span class="print svgicon"></span></button>
+		</div><!-- /.btn-group -->
+	</div><!-- /.responsive-right2left -->
+</div><!-- /.col-3 offset -->
+</div><!-- /.col-9 mid-banner -->
+<div class="col-sm-3 mid-search">
+<s_sidebar_element>
+<s_search>
+	<!-- Search -->
+	<button type="button" class="btn-mq btn-xs"><span class="search svgicon"></span></button>
+	<input role="search" type="text" class="search-input" placeholder="Search" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+</s_search>
+</s_sidebar_element>
+</div><!-- /.col mid-search -->
+</div><!-- /.row -->
+</section><!-- /#middle -->
+</div><!-- /.container-fluid skeleton-mid-banner -->
+
+<div class="container-fluid skeleton"><!-- site layout :  content /.container-fluid skeleton --> 
+<main role="main" id="content" class="main">
 <article role="article" class="hentry">
 <div id="changeFontFamily" class="font-resize"><!-- font utility javascript-->
 
 <!-- Search 
 ================================================== -->
 <s_list>
-<div class="container">
 <section class="search-list">
+<div class="row"> 
+<div class="col-sm-12">
 	<p>'[##_list_conform_##]'에 해당되는 글 [##_list_count_##]건</p>
 	<ol>
 	<s_list_rep>
@@ -108,12 +180,15 @@
 	</li>
 	</s_list_rep>
 	</ol>
+</div><!-- /.col -->
+</div><!-- /.row -->
 </section>
-</div><!-- /.container -->
 </s_list>
 
 <s_rplist>
 <section class="search-list">
+<div class="row"> 
+<div class="col-sm-12">
 	<p>'[##_rplist_conform_##]'에 해당되는 댓글 [##_rplist_count_##]건</p>    
 	<ol>
 	<s_rplist_rep>
@@ -125,56 +200,66 @@
 	</li>
 	</s_rplist_rep>
 	</ol>
+</div><!-- /.col -->
+</div><!-- /.row -->
 </section>
 </s_rplist>
 
 <!-- Local
 ================================================== -->
 <s_local>
-<div class="container">
-<div class="locallog">
-	<h3>Locallog</h3>
+<section class="localog">
+<div class="row"> 
+<div class="col-sm-12">
+	<h3>Localog</h3>
 	<s_local_spot_rep>
 	<div class="spot" style="margin-left: [##_local_spot_depth_##]px">[##_local_spot_##]</div>
 	</s_local_spot_rep>
 	<s_local_info_rep>
 	<div class="info" style="margin-left: [##_local_info_depth_##]px"><a href="[##_local_info_link_##]">[##_local_info_title_##]</a></div>
 	</s_local_info_rep>
-</div>
-</div><!-- /.container -->
+</div><!-- /.col -->
+</div><!-- /.row -->
+</section>
 </s_local>
 
 <!-- Tag
 ================================================== -->
 <s_tag>
-<div class="container">
-<div class="taglog">
+<section class="taglog">
+<div class="row"> 
+<div class="col-sm-12">
 	<h3>Tags</h3>
-	<ul class="inline">
+	<ul class="list-inline">
 	<s_tag_rep>
 	<li><a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a></li>
 	</s_tag_rep>
 	</ul>
-</div>
-</div><!-- /.container -->
+</div><!-- /.col -->
+</div><!-- /.row -->
+</section>
 </s_tag>
 
 <!-- Media
 ================================================== -->
 <s_media>
-<div class="container">
-<div class="medialog">
+<section class="medialog">
+<div class="row"> 
+<div class="col-sm-12">
 	<h3>Medialog</h3>
 	[##_media_content_##]
-</div>
-</div><!-- /.container -->
+</div><!-- /.col -->
+</div><!-- /.row -->
+</section>
 </s_media>
 
 <!-- Guestbook
 ================================================== -->
 <s_guest>
-<div class="container">
-<div class="guestbook">
+<section id="guestbook">
+<div class="row"> 
+<div class="col-sm-12">
+<div class="guestbook global-links">
 	<h3>Guestbook</h3>
 	<s_guest_input_form>
 	<s_guest_member>
@@ -262,114 +347,44 @@
 		</s_guest_rep>
 		</ol>
 		</s_guest_container>
-</div>
-</div><!-- /.container -->
+</div><!-- /.guestbook -->
+</div><!-- /.col -->
+</div><!-- /.row -->
+</section>
 </s_guest>
 
 <!-- Notice
 ================================================== -->
 <s_notice_rep>
+<section id="notice">
 <header class="entry-header">
-<div class="container">
 <div class="row"> 
-<div class="col-sm-12">
+<div class="col-sm-12 global-links">
 	<h1 class="entry-title"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h1>
 	<time class="published" datetime="[##_article_rep_date_##]">[##_article_rep_date_##]</time>
-</div><!-- /.col -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-
-<div class="container">
-<div class="row"> 
-<div class="col-sm-9">
 	<p class="byline author vcard">Posted in <strong><a href="[##_blog_link_##]notice">Notice</a></strong>  by <span class="fn">[##_blogger_##]</span></p>
-</div>
-
-<div class="col-sm-3">
-	<div class="responsive-right2left">
-	<div class="btn-group">
-		<button type="button" class="jfontsize-p btn btn-default btn-xs"><i class="icon-plus"></i></button>
-		<button type="button" class="jfontsize-m btn btn-default btn-xs"><i class="icon-minus"></i></button>
-		<div class="btn-group">
-			<button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">FONT <span class="caret"></span></button>
-			<ul class="dropdown-menu">
-				<li><a href="javascript:changeFontFamily('맑은 고딕, Malgun Gothic, sans-serif');">맑은고딕</a></li>
-				<li><a href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
-				<li><a href="javascript:changeFontFamily('다음_Regular, daum_Regular, sans-serif');">다음</a></li>
-				<li><a href="javascript:changeFontFamily('굴림, Gulim, sans-serif');">굴림</a></li>
-				<li><a href="javascript:changeFontFamily('돋움, dotum, sans-serif');">돋움</a></li>
-				<li><a href="javascript:changeFontFamily('바탕, Batang, sans-serif');">바탕</a></li>
-			  	<li><a href="javascript:changeFontFamily('Arial, Helvetica, sans-serif');">Arial</a></li>
-			  	<li><a href="javascript:changeFontFamily('Georgia, serif');">Georgia</a></li>
-			  	<li><a href="javascript:changeFontFamily('Times New Roman, Times, serif');">Times</a><li>
-			  	<li><a href="javascript:changeFontFamily('Comic Sans MS, cursive, sans-serif');">Comic Sans MS</a></li>
-			  	<li><a href="javascript:changeFontFamily('Lucida Console, Monaco, monospace');">Lucida Console</a></li>
-			  	<li><a href="javascript:changeFontFamily('Courier New, Courier, monospace');">Courier New</a></li>
-				<li class="divider"></li>
-				<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <i class="icon-question-sign"></i></a></li>
-			</ul>
-		</div><!-- /.btn-group -->
-	</div><!-- /.btn-group -->
-	</div><!-- /.responsive-right2left -->
 </div><!-- /.col -->
 </div><!-- /.row -->
-</div><!-- /.container -->
 </header>
 	<div class="entry-content">
 	[##_notice_rep_desc_##]
 	</div>
+</section>
 </s_notice_rep>
 
 <!-- Protected
 ================================================== -->
 <s_article_protected>
+<section id="protected">
 <header class="entry-header">
-<div class="container">
 <div class="row"> 
-<div class="col-sm-12">
+<div class="col-sm-12 global-links">
 	<h1 class="entry-title"><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
 	<time class="published" datetime="[##_article_rep_date_##]">[##_article_rep_date_##]</time>
-</div><!-- /.col -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-
-<div class="container">
-<div class="row"> 
-<div class="col-sm-9">
 	<p class="byline author vcard">Posted in <strong><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></strong>  by <span class="fn">[##_blogger_##]</span></p>
-</div>
-
-<div class="col-sm-3">
-	<div class="responsive-right2left">
-	<div class="btn-group">
-		<button type="button" class="jfontsize-p btn btn-default btn-xs"><i class="icon-plus"></i></button>
-		<button type="button" class="jfontsize-m btn btn-default btn-xs"><i class="icon-minus"></i></button>
-		<div class="btn-group">
-			<button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">FONT <span class="caret"></span></button>
-			<ul class="dropdown-menu">
-				<li><a href="javascript:changeFontFamily('맑은 고딕, Malgun Gothic, sans-serif');">맑은고딕</a></li>
-				<li><a href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
-				<li><a href="javascript:changeFontFamily('다음_Regular, daum_Regular, sans-serif');">다음</a></li>
-				<li><a href="javascript:changeFontFamily('굴림, Gulim, sans-serif');">굴림</a></li>
-				<li><a href="javascript:changeFontFamily('돋움, dotum, sans-serif');">돋움</a></li>
-				<li><a href="javascript:changeFontFamily('바탕, Batang, sans-serif');">바탕</a></li>
-			  	<li><a href="javascript:changeFontFamily('Arial, Helvetica, sans-serif');">Arial</a></li>
-			  	<li><a href="javascript:changeFontFamily('Georgia, serif');">Georgia</a></li>
-			  	<li><a href="javascript:changeFontFamily('Times New Roman, Times, serif');">Times</a><li>
-			  	<li><a href="javascript:changeFontFamily('Comic Sans MS, cursive, sans-serif');">Comic Sans MS</a></li>
-			  	<li><a href="javascript:changeFontFamily('Lucida Console, Monaco, monospace');">Lucida Console</a></li>
-			  	<li><a href="javascript:changeFontFamily('Courier New, Courier, monospace');">Courier New</a></li>
-				<li class="divider"></li>
-				<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <i class="icon-question-sign"></i></a></li>
-			</ul>
-		</div><!-- /.btn-group -->
-	</div><!-- /.btn-group -->
-	</div><!-- /.responsive-right2left -->
 </div><!-- /.col -->
 </div><!-- /.row -->
-</div><!-- /.container -->
 </header>
-
 	<div class="entry-content">
 	<p>보호되어 있는 글입니다. 내용을 보시려면 비밀번호를 입력하세요.</p>
 	<p><label for="[##_article_password_##]">비밀번호 ::</label>
@@ -377,6 +392,7 @@
 	<input type="button" class="btn" value="submit" onclick="[##_article_dissolve_##]" >
 	</p>
 	</div>
+</section>
 </s_article_protected>
 
 <!-- Entry
@@ -386,66 +402,26 @@
 <!-- Entry : header
 ================================================== -->      
 <header class="entry-header">
-<div class="container">
 <div class="row"> 
-<div class="col-sm-12">
+<div class="col-sm-12 global-links">
 	<h1 class="entry-title"><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
-	<!-- <h2 class="entry-summary"> the_excerpt </h2> -->
 	<time class="published" datetime="[##_article_rep_date_##]">[##_article_rep_date_##]</time>
+	<p class="byline author vcard">Posted in <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> by <span class="fn">[##_blogger_##]</span></p>
 </div><!-- /.col -->
 </div><!-- /.row -->
-</div><!-- /.container -->
-
-<div class="container">
-<div class="row"> 
-<div class="col-sm-9">
-	<p class="byline author vcard">Posted in <a href="[##_article_rep_category_link_##]"><strong>[##_article_rep_category_##]</strong></a> by <span class="fn">[##_blogger_##]</span></p>
-</div>
-
-<div class="col-sm-3">
-	<div class="responsive-right2left">
-	<div class="btn-group">
-		<button type="button" class="jfontsize-p btn btn-default btn-xs"><i class="icon-plus"></i></button>
-		<button type="button" class="jfontsize-m btn btn-default btn-xs"><i class="icon-minus"></i></button>
-		<div class="btn-group">
-			<button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">FONT <span class="caret"></span></button>
-			<ul class="dropdown-menu">
-				<li><a href="javascript:changeFontFamily('맑은 고딕, Malgun Gothic, sans-serif');">맑은고딕</a></li>
-				<li><a href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
-				<li><a href="javascript:changeFontFamily('다음_Regular, daum_Regular, sans-serif');">다음</a></li>
-				<li><a href="javascript:changeFontFamily('굴림, Gulim, sans-serif');">굴림</a></li>
-				<li><a href="javascript:changeFontFamily('돋움, dotum, sans-serif');">돋움</a></li>
-				<li><a href="javascript:changeFontFamily('바탕, Batang, sans-serif');">바탕</a></li>
-			  	<li><a href="javascript:changeFontFamily('Arial, Helvetica, sans-serif');">Arial</a></li>
-			  	<li><a href="javascript:changeFontFamily('Georgia, serif');">Georgia</a></li>
-			  	<li><a href="javascript:changeFontFamily('Times New Roman, Times, serif');">Times</a><li>
-			  	<li><a href="javascript:changeFontFamily('Comic Sans MS, cursive, sans-serif');">Comic Sans MS</a></li>
-			  	<li><a href="javascript:changeFontFamily('Lucida Console, Monaco, monospace');">Lucida Console</a></li>
-			  	<li><a href="javascript:changeFontFamily('Courier New, Courier, monospace');">Courier New</a></li>
-				<li class="divider"></li>
-				<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <i class="icon-question-sign"></i></a></li> 
-			</ul>
-		</div><!-- /.btn-group -->
-	</div><!-- /.btn-group -->
-	</div><!-- /.responsive-right2left -->
-</div><!-- /.col -->
-</div><!-- /.row -->
-</div><!-- /.container -->
 </header>
 
 <!-- Entry : admin 
 ================================================== -->
 <s_ad_div>
-<div class="container">
 <div class="row"> 
 <div class="col-sm-12">
-<div class="alert alert-info fade in">
+<div class="alert alert-warning fade in">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 	<a href="[##_s_ad_m_link_##]">수정</a> : <a href="#" onclick="[##_s_ad_m_onclick_##]">수정(창으로)</a> | ([##_s_ad_s1_label_##])→ <a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a> | <a href="#" onclick="[##_s_ad_t_onclick_##]">관련글(트랙백)</a> | <a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
 </div>
 </div><!-- /.col -->
 </div><!-- /.row -->
-</div><!-- /.container -->
 </s_ad_div>
 
 <!-- Entry : body
@@ -454,39 +430,34 @@
 [##_article_rep_desc_##]
 </div>
 
-<div class="container">
 <div class="row"> 
-<div class="col-sm-12">
+<div class="col-sm-12 global-links">
 <section class="entry-tags">
 <s_tag_label>
-<i class="icon-tags"></i> [##_tag_label_rep_##]
+<span class="tags svgicon"></span> [##_tag_label_rep_##]
 </s_tag_label>
 </section>        
 </div><!-- /.col -->
 </div><!-- /.row -->
-</div><!-- /.container -->
-
 
 <!-- Entry : footer -->
 <div class="entry-footer">
-<div class="container">
 <div class="row"> 
 <div class="col-sm-12">
 
 <!-- Entry : footer : actionTrail
 ================================================== -->
 <section class="actionTrail">
-<div class="globe-hover-111-555">
-	<p><i class="icon-leaf"></i> <a href="#tb" onclick="[##_article_rep_tb_link_##]"> Trackback</a> <span class="cnt">[##_article_rep_tb_cnt_##]</span> : <i class="icon-comments"></i> <a href="#rp" onclick="[##_article_rep_rp_link_##]"> Comment</a> <span class="cnt"> [##_article_rep_rp_cnt_##]</span> 
+<div class="global-links">
+	<p><span class="trackbacks svgicon"></span> <a href="#tb" onclick="[##_article_rep_tb_link_##]"> Trackback</a> <span class="cnt">[##_article_rep_tb_cnt_##]</span> : <span class="comments svgicon"></span> <a href="#rp" onclick="[##_article_rep_rp_link_##]"> Comment</a> <span class="cnt"> [##_article_rep_rp_cnt_##]</span> 
 	</p>
 </div>
 </section>
 
-
 <!-- Entry : footer  : trackback
 ================================================== -->
 <s_tb>
-<section class="trackback">
+<section class="trackback global-links">
 	<p>[##_tb_address_##]</p>
 	<s_tb_container>
 	<ol>
@@ -507,7 +478,7 @@
 <!-- Entry : footer  : comment
 ================================================== -->
 <s_rp>   
-<section class="comment">
+<section class="comment global-links">
 	<s_rp_container>
 	<ol>
 	<s_rp_rep>
@@ -600,18 +571,16 @@
 		
 </div><!-- /.col -->
 </div><!-- /.row -->
-</div><!-- /.container -->
 </div><!-- Entry : footer -->
 
 </s_article_rep>
 
 <!-- Paging
 ================================================== -->  
-<div class="container">
+<s_paging>
+<section class="paging">
 <div class="row"> 
 <div class="col-sm-12">
-<section>
-<s_paging>
 	<ul class="pagination">
 	<li><a [##_prev_page_##] class="[##_no_more_prev_##]" id="prevPage">&laquo;</a></li>
 	<s_paging_rep>
@@ -619,236 +588,240 @@
 	</s_paging_rep>
 	<li><a [##_next_page_##] class="[##_no_more_next_##]" id="nextPage">&raquo;</a></li>
 	</ul>
-</s_paging>
-</section>
 </div><!-- /.col -->
 </div><!-- /.row -->
-</div><!-- /.container -->
+</section>
+</s_paging>
 
-	</div><!-- font utility -->
+
+</div><!-- font utility -->
 </article>
+</main>
+</div><!-- site layout : content /.container-fluid skeleton -->
 
-<div class="container"><!-- main layout : widget container -->
-<div class="row"><!-- main layout : widget row -->
-<div class="col-sm-12"><!-- main layout : widget column -->
+
+<div class="container"><!-- main layout : aside container -->
+<div class="row"><!-- main layout : aside row -->
+<div class="col-sm-12"><!-- main layout : aside column -->
 <aside role="complementary">
 <s_sidebar>
-
 	<div class="row">
 	<s_sidebar_element>
 	<!-- catetories -->
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-inner">
-	<h3>Categories</h3>
-	[##_category_list_##]
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-inner">
+				<h3>Categories</h3>
+					[##_category_list_##]
+				</div>
+			</section>
+		</div>
 	</s_sidebar_element>
 
 
 	<s_sidebar_element>
 	<!-- Recent atricle -->
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-feed-inner">
-	<h3>Recent Articles</h3>
-	<div class="widget-feed"></div>
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-feed-inner">
+				<h3>Recent Articles</h3>
+					<div class="widget-feed"></div>
+				</div>
+			</section>
+		</div>
 	</s_sidebar_element>
 
 	<s_sidebar_element>
 	<!-- Recent atricle(default) -->
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-inner">
-	<h3>Recent Articles(default)</h3>
-	<ul>
-	<s_rctps_rep>
-	<li>
-	<a href="[##_rctps_rep_link_##]"> [##_rctps_rep_title_##]. <span class="cnt">[##_rctps_rep_rp_cnt_##]</span></a> 
-	</li>
-	</s_rctps_rep>
-	</ul>
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-inner">
+				<h3>Recent Articles(default)</h3>
+					<ul>
+						<s_rctps_rep>
+						<li>
+						<a href="[##_rctps_rep_link_##]"> [##_rctps_rep_title_##]. <span class="cnt">[##_rctps_rep_rp_cnt_##]</span></a> 
+						</li>
+						</s_rctps_rep>
+					</ul>
+				</div>
+			</section>
+		</div>
 	</s_sidebar_element>
 
 	<s_sidebar_element>
 	<!-- Recent comment -->
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-inner">
-	<h3>Recent Comments</h3>
-	<ul>
-	<s_rctrp_rep>
-	<li>
-	<a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]. <span class="cnt">by [##_rctrp_rep_name_##]</span></a>
-	</li>
-	</s_rctrp_rep>
-	</ul>                         
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-inner">
+				<h3>Recent Comments</h3>
+					<ul>
+						<s_rctrp_rep>
+						<li>
+						<a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]. <span class="cnt">by [##_rctrp_rep_name_##]</span></a>
+						</li>
+						</s_rctrp_rep>
+					</ul>                         
+				</div>
+			</section>
+		</div>
 	</s_sidebar_element>
 
 	<s_sidebar_element>
 	<!-- Recent Trackback -->
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-inner">
-	<h3>Recent Trackbacks</h3>
-	<ul>
-	<s_rcttb_rep>
-	<li>
-	<a href="[##_rcttb_rep_link_##]">[##_rcttb_rep_desc_##]. 
-	<br>[##_rcttb_rep_name_##] <time datetime="[##_rcttb_rep_time_##]">[##_rcttb_rep_time_##]</time>
-	</a>
-	</li>
-	</s_rcttb_rep>
-	</ul>
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-inner">
+				<h3>Recent Trackbacks</h3>
+					<ul>
+						<s_rcttb_rep>
+						<li>
+						<a href="[##_rcttb_rep_link_##]">[##_rcttb_rep_desc_##]. 
+						<br>[##_rcttb_rep_name_##] <time datetime="[##_rcttb_rep_time_##]">[##_rcttb_rep_time_##]</time>
+						</a>
+						</li>
+						</s_rcttb_rep>
+					</ul>
+				</div>
+			</section>
+		</div>
 	</s_sidebar_element>
 
 	<s_sidebar_element>
 	<!-- Notice list -->
 	<s_rct_notice>
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-inner">
-	<h3>Notice</h3>
-	<ul>
-	<s_rct_notice_rep>
-	<li><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a> </li>
-	</s_rct_notice_rep>
-	</ul>
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-inner">
+				<h3>Notice</h3>
+					<ul>
+						<s_rct_notice_rep>
+						<li><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a> </li>
+						</s_rct_notice_rep>
+					</ul>
+				</div>
+			</section>
+		</div>
 	</s_rct_notice>
 	</s_sidebar_element>
 
 	 <s_sidebar_element>
 	 <!-- Global tags -->
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-inner">
-	<h3>Tag List</h3>
-	<ul>
-	<s_random_tags>
-	<li> <a href="[##_tag_link_##]" class="[##_tag_class_##]"><span class="label label-default"> [##_tag_name_##]</span></a></li>
-	</s_random_tags>
-	</ul>
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-inner">
+				<h3>Tag List</h3>
+					<ul>
+						<s_random_tags>
+						<li> <a href="[##_tag_link_##]" class="[##_tag_class_##]"><span class="label label-default"> [##_tag_name_##]</span></a></li>
+						</s_random_tags>
+					</ul>
+				</div>
+			</section>
+		</div>
 	</s_sidebar_element>
 
 	 <s_sidebar_element>
 	 <!-- Links -->
-	<div class="col-sm-4">
-	<section class="widget">
-	<div class="widget-inner">
-	<h3>Links</h3>
-	<ul>
-	<s_link_rep>
-	<li><a href="[##_link_url_##]">[##_link_site_##]</a></li>
-	</s_link_rep>
-	</ul>
-	</div>
-	</section>
-	</div>
+		<div class="col-sm-4">
+			<section class="widget">
+				<div class="widget-inner">
+				<h3>Links</h3>
+					<ul>
+						<s_link_rep>
+						<li><a href="[##_link_url_##]">[##_link_site_##]</a></li>
+						</s_link_rep>
+					</ul>
+				</div>
+			</section>
+		</div>
 	</s_sidebar_element>
 
 	</div><!-- /.row -->
 </s_sidebar>
 </aside>
-</div><!-- main layout : widget /.column -->
-</div><!-- main layout : widget /.row -->
+</div><!-- site layout : aside /.column -->
+</div><!-- site layout : aside /.row -->
+</div><!-- site layout : aside /.container -->
 
-</main>
-</div><!-- main layout : /.wrapper -->
 
-<div class="wrapper skeleton-footer">
+<div class="container-fluid skeleton-footer">
 <div class="container">
 <footer role="contentinfo">
 	<div class="source-org vcard copyright">
-		<!-- Your Footer Here / http://microformats.org/profile/hcard-->
+		<!-- http://microformats.org/profile/hcard -->
 		<div class="row">
 		<div class="col-xs-12">
-		<ul class="license-links">
-		<li>Copyright &copy; 2013 <a class="org fn url" href="#" target="_blank">your brand</a></li>
-		<li>company.</li>
-		<li>Terms Privacy</li>
-		<li>Security</li>
-		<li>Contact</li>		
-		<li>Total : [##_count_total_##]</li>
-		<li>Today : [##_count_today_##]</li>
-		<li>Yesterday : [##_count_yesterday_##]</li>
-		<li><a title="rss" href="[##_rss_url_##]">RSS</a></li>
-		<li><a title="local" href="[##_localog_link_##]">Localog</a></li>
-		<li><a title="tags" href="[##_taglog_link_##]">Tags</a></li>
-		<li><a title="admin" href="[##_owner_url_##]">Admin</a></li>
-		</ul>
-		</div>
-		</div>
-
+			<ul class="footer-links">
+				<li>Copyright &copy; 2013 <a class="org fn url" href="[##_blog_link_##]" target="_blank">[##_title_##]</a> All rights reserved.</li>
+				<li><a title="rss" href="[##_rss_url_##]">RSS</a></li>
+				<li><a title="local" href="[##_localog_link_##]">Localog</a></li>
+				<li><a title="tags" href="[##_taglog_link_##]">Tags</a></li>
+				<li><a title="guestbook" href="[##_guestbook_link_##]">Guestbook</a></li>
+				<li><a title="admin" href="[##_owner_url_##]">Admin</a></li>
+				<li>Total : [##_count_total_##]</li>
+				<li>Today : [##_count_today_##]</li>
+				<li>Yesterday : [##_count_yesterday_##]</li>
+			</ul>
+		</div><!-- /.col -->
+		</div><!-- /.row -->
 		<!-- MARKQUERY AND OPENSOURCES LICENSE -->
 		<div class="row">
 		<div class="col-xs-12">
-		<ul class="license-links">
-		<li>Customize Your Contents <a title="go to markquery" href="http://markquery.com/" target="_blank">마크쿼리</a> Project maintained  by <a title ="go to github project" href="https://github.com/markquery/">Ungki, H</a></li>
-		<li class="text-muted">&middot;</li>
-		<li>Hosted by <a title="go to daum" href="http://daum.net/" target="_blank">Daum</a></li>
-		<li class="text-muted">&middot;</li>
-		<li>Powered by <a title="go to tistory" href="http://tistory.com/" target="_blank">Tistory</a></li>
-		<li class="text-muted">&middot;</li>
-		<li>Based on <a title="go to bootstrap" href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
-		<li class="text-muted">&middot;</li>
-		<li><a title="go to less" href="http://lesscss.org/" target="_blank">Less</a></li>
-		<li class="text-muted">&middot;</li>
-		<li><a title="go to coffeescript" href="http://coffeescript.org/" target="_blank">CoffeeScript</a></li>
-		<li class="text-muted">&middot;</li>
-		<li>etc.</li>
-		<li class="text-muted">&middot;</li>
-		<li><a title="go to about" href="http://markquery.github.io/license/" target="_blank">About</a></li> 
-		</ul>
-		</div>
-		</div>
+			<ul class="footer-links">
+				<li>Customize Your Content <a href="http://markquery.com/" target="_blank">마크쿼리</a></li>
+				<li class="text-muted">&middot;</li>
+				<li><a href="http://github.com/markquery/" target="_blank">GitHub</a></li> 
+				<li class="text-muted">&middot;</li>
+				<li><a href="http://markquery.github.io/license/" target="_blank">License</a></li> 
+				<li class="text-muted">&middot;</li>
+				<li>Hosted by <a title="go to daum" href="http://daum.net/" target="_blank">Daum</a></li>
+				<li class="text-muted">&middot;</li>
+				<li>Powered by <a href="http://tistory.com/" target="_blank">Tistory</a></li>
+			</ul>
+		</div><!-- /.col -->
+		</div><!-- /.row -->
 	</div><!-- /.vcard microformats -->
 </footer>
-</div>
-</div>
+</div><!-- /.container -->
+</div><!-- /.container-fluid skeleton-footer -->
 
-<a href="#" class="scrollup">Back to Top <i class="icon-arrow-up"></i></a>
-
+<a href="#" class="scrollup">Back to Top <span class="uparrow svgicon"></span></a>
 <!-- jQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="./images/jquery-1.10.1.min.js"><\/script>')</script>
-<!-- javascripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="./images/jquery-1.10.2.min.js"><\/script>')</script>
+<!-- JavaScript -->
 <script src="./images/modernizr-2.6.2.min.js"></script>
-<script src="./images/bootstrap.js"></script>
+<script src="./images/bootstrap.min.js"></script>
 <script src="./images/script.js"></script>
-<script src="./images/rss.js"></script>
-<script src="./images/fontsize.js"></script>
-<!-- get recent article included thumbnail -->
 <script>
+//<![CDATA[
    jQuery(function($) {
         $(".widget-feed").rss("http://markquery.com/feed", {
           limit: 5,
           effect: 'slideFast',
           layoutTemplate: '<ul class=\"media-list\">{entries}</ul>',
-            entryTemplate: '<li class=\"media\"><a class=\"pull-left\" href=\"{url}\"><img class=\"media-object media-thumbnail\" src=\"{teaserImageUrl}\"></a><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\"{url}\">{title}</a></h4></div></li>'
+            entryTemplate: '<li class=\"media\"><a class=\"pull-left\" href=\"{url}\"><img class=\"media-object media-thumbnail\" src=\"{teaserImageUrl}\"></a><div class=\"media-body\"><h4 class=\"media-heading\"><a href=\"{url}\">{title}</a></h4><p><a href=\"{url}\">{shortBodyPlain}</a></p></div></li>'
         })
       })
+
+function changeFontFamily(fontFam){document.getElementById("changeFontFamily").style.fontFamily=fontFam;}function btnPrint(){window.print();}$(document).ready(function(){var newURL = window.location.host + window.location.pathname;var pathArray = newURL.split( '/' );if(pathArray[1] == ""){$(".skeleton-header").addClass("header-init");}});$(function(){var zIndexNumber=1000;$('div').each(function(){$(this).css('zIndex',zIndexNumber);zIndexNumber-=10})});
+
+
+if (!Modernizr.svg) {
+  $(".plus").css("background-image", "url(./images/plus-icon.png)");
+  $(".minus").css("background-image", "url(./images/minus-icon.png)");
+  $(".font").css("background-image", "url(./images/font-icon.png)");
+  $(".print").css("background-image", "url(./images/print-icon.png)");
+  $(".help").css("background-image", "url(./images/help-icon.png)");
+  $(".trackbacks").css("background-image", "url(./images/trackback-icon.png)");
+  $(".comments").css("background-image", "url(./images/comment-icon.png)");
+  $(".tags").css("background-image", "url(./images/tag-icon.png)");
+  $(".search").css("background-image", "url(./images/search-icon.png)");
+  $(".uparrow").css("background-image", "url(./images/uparrow-icon.png)");
+}
+//]]>
 </script>
-<script language="JavaScript">function changeFontFamily(fontFam){document.getElementById("changeFontFamily").style.fontFamily=fontFam;}</script>
 </s_t3>
 </body>
 </html>

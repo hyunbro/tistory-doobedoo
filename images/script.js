@@ -1,18 +1,12 @@
 (function() {
   $(function() {
-    $("[href^=#none]").click(function(e) {
+    $("[href^=#]").click(function(e) {
       return e.preventDefault();
     });
     $("a[data-toggle=popover]").popover().click(function(e) {
       return e.preventDefault();
     });
     $("a[data-toggle=tooltip]").tooltip();
-    $(function() {});
-    $(".carousel").carousel;
-    ({
-      interval: 5000,
-      pause: "hover"
-    });
     $(window).scroll(function() {
       if ($(this).scrollTop() > 100) {
         return $(".scrollup").fadeIn();
@@ -25,7 +19,7 @@
         scrollTop: 0
       }, 600, false);
     });
-    $(".font-resize").jfontsize({
+    return $(".font-resize").jfontsize({
       btnMinusClasseId: ".jfontsize-m",
       btnDefaultClasseId: ".jfontsize-d",
       btnPlusClasseId: ".jfontsize-p"

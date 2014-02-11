@@ -10,10 +10,10 @@ module.exports = function(grunt) {
         'Gruntfile.js',
         'grunt/scripts/*.js',
         'grunt/scripts/bootstrap/*.js',
-        '!grunt/scripts/bootstrap.js'
+        '!grunt/scripts/bootstrap.min.js'
       ]
     },
-    recess: {
+    less: {
       dist: {
         options: {
           compile: true,
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'grunt/scripts/bootstrap.js': [
+          'grunt/scripts/bootstrap.min.js': [
             'grunt/scripts/bootstrap/transition.js',
             'grunt/scripts/bootstrap/alert.js',
             'grunt/scripts/bootstrap/button.js',
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         files: [
           'grunt/styles/less/*.less'
         ],
-        tasks: ['recess']
+        tasks: ['less']
       },
       js: {
         files: [
@@ -71,14 +71,14 @@ module.exports = function(grunt) {
         },
         files: [
           'grunt/styles/bootstrap.css',
-          'grunt/scripts/bootstrap.js'
+          'grunt/scripts/bootstrap.min.js'
         ]
       }
     },
     clean: {
       dist: [
         'grunt/styles/bootstrap.css',
-        'grunt/scripts/bootstrap.js'
+        'grunt/scripts/bootstrap.min.js'
       ]
     }
   });
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-recess');
-  grunt.registerTask('default', ['clean','recess','uglify']);
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.registerTask('default', ['clean','less','uglify']);
   grunt.registerTask('dev', ['watch']);
 };
