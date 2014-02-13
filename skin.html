@@ -619,7 +619,7 @@
 
 
 	<s_sidebar_element>
-	<!-- Recent atricle -->
+	<!-- Recent article-->
 		<div class="col-sm-4">
 			<section class="widget">
 				<div class="widget-feed-inner">
@@ -631,7 +631,7 @@
 	</s_sidebar_element>
 
 	<s_sidebar_element>
-	<!-- Recent atricle(default) -->
+	<!-- Recent article(default) -->
 		<div class="col-sm-4">
 			<section class="widget">
 				<div class="widget-inner">
@@ -751,7 +751,7 @@
 		<div class="row">
 		<div class="col-xs-12">
 			<ul class="footer-links">
-				<li>Copyright &copy; 2013 <a class="org fn url" href="[##_blog_link_##]" target="_blank">[##_title_##]</a> All rights reserved.</li>
+				<li>Copyright &copy; 2014 <a class="org fn url" href="[##_blog_link_##]" target="_blank">[##_title_##]</a> All rights reserved.</li>
 				<li><a title="rss" href="[##_rss_url_##]">RSS</a></li>
 				<li><a title="local" href="[##_localog_link_##]">Localog</a></li>
 				<li><a title="tags" href="[##_taglog_link_##]">Tags</a></li>
@@ -819,6 +819,13 @@ if (!Modernizr.svg) {
 }
 //]]>
 </script>
+<!--[if lt IE 8]>
+<script>
+//<![CDATA[
+$(function(){var zIndexNumber=1000;$('div').each(function(){$(this).css('zIndex',zIndexNumber);zIndexNumber-=10})});
+//]]>
+</script>
+<![endif]-->
 </s_t3>
 </body>
 </html>
