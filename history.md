@@ -1,59 +1,91 @@
 # v3.0.0b (February 9, 2014)
-v3.0.0b는 pre-release입니다. history.md에 기재하지 않은 수정 또는 변경 사항이 있을 수 있습니다. 
+v3.0.0b는 pre-release입니다. history.md에 기재하지 않은 수정 또는 변경 사항이 있을 수 있습니다.
 
-- (티스토리 제외) Bootstrap 3 for IE7(beta) 추가.  https://github.com/coliff/bootstrap-ie7 `Requirements`  Boostrap 3 uses the box-sizing property for layouts which is not natively supported by IE7. The polyfill 'boxsizing.htc' is required: https://github.com/Schepp/box-sizing-polyfill
-- (티스토리 제외) respond-1.4.2.min.js v1.1.0에서 v1.4.2로 업데이트 https://github.com/scottjehl/Respond
-- jquery 업데이트 v1.10.1에서 v1.10.2로 업데이트 https://developers.google.com/speed/libraries/devguide
-- html5shiv 업데이트 v3.6.2에서 v3.7.0으로 업데이트 https://github.com/aFarkas/html5shiv
-	IE7, IE8에서 `main` HTML5 태그지원 스크립트 삭제 
-- flaunt.min.js 메뉴 스크립트 추가 
-- script.js 수정 
-- 링크 `#none` 없애고 `#`만으로 수정 script.js
-- bootstrap 자바스크립트는 min으로 변경
-- ie.css 수정 `.ie7`, `.ie8` 브라우저 감지
-- ie7부터 `해피브라우저` 적용, 한글 추가 http://browsehappy.com/ 
-- bootstrap3 v3.1.0 업데이트 http://blog.getbootstrap.com/2014/01/30/bootstrap-3-1-0-released/
-- bootstrap3 `.container-fluid` 추가(정규 클래스) 
-- bootstrap3 `col-*-nospace-*` 개별 nospace 클래스 삭제 
-- bootstrap3의 navbar 사용 시 navbar.less에서 `border` 각주 처리 
-- bootstrap3의 navbar 대신 flaunt 내비게이션 메뉴로 변경, 티스토리에서 IE7, IE8 지원  `skeleton-nav` 
-	티스토리에서는 `navbar.less`와 `navs.less`는 각주 처리 
-- 사이트 헤더에 커버 이미지(1170px * 400px) 적용, 이미지는 백그라운드 CSS  `skeleton-header`
-	백그라운드 이미지를 반응형웹에 대응, 400/1170 = 0.3418% =  `padding-top: 34.18%`
+## IE7+ 이슈
+- Bootstrap 3 for IE7(beta) 추가 https://github.com/coliff/bootstrap-ie7 
+> `Requirements` Boostrap 3 uses the box-sizing property for layouts which is not natively supported by IE7. The polyfill 'boxsizing.htc' is required: https://github.com/Schepp/box-sizing-polyfill
+
+- 티스토리의 경우 `ie.css`로 IE7+ 지원
+> ie.css 수정 `.ie7`, `.ie8` 브라우저 감지
+
+- 티스토리의 경우 `flaunt.min.js` 메뉴 스크립트 추가
+> bootstrap3의 내비게이션(navbar) 닫음
+
+- `html5shiv` 업데이트 `v3.6.2`에서 `v3.7.0`으로 업데이트 https://github.com/aFarkas/html5shiv
+> IE7, IE8에 `main` HTML5 태그지원 스크립트 삭제
+
+- IE7부터 `해피브라우저` 적용, 한글 추가 http://browsehappy.com/
+
+## Scripts
+
+- `respond-1.4.2.min.js` `v1.1.0`에서 `v1.4.2`로 업데이트 https://github.com/scottjehl/Respond
+- `jQuery` 업데이트 `v1.10.1`에서 `v1.10.2`로 업데이트 https://developers.google.com/speed/libraries/devguide
+- `bootstrap.js` 자바스크립트는 `bootstrap.min.js`로 변경
+- script.js 일부수정 
+> `#none` 없애고 `#`만으로 수정
+
+## bootstrap v3
+
+- v3.1.0 업데이트 http://blog.getbootstrap.com/2014/01/30/bootstrap-3-1-0-released/
+- `.container-fluid` 추가(정규 클래스) 
+- `col-*-nospace-*` 개별 클래스 삭제 
+- 티스토리의 경우 `navbar.less`와 `navs.less` 각주 처리 
+> navbar 사용 시 navbar.less에서 `border` 각주 처리
+
+- print.less 업데이트 
+>.skeleton-nav,.skeleton-header,.skeleton-mid-banner,.alert,.actionTrail,.paging,form,aside,.tistorytoolbar,.scrollup {display: none !important;}
+
+## Skeleton
+
+### navbar
+- `skeleton-nav` 티스토리의 경우 bootstrap의 navbar 대신 IE7+ 지원을 위한 가벼운 스크립트 `flaunt` 적용
+
+### header
+
+- `skeleton-header` 사이트 헤더에 Spider's Web 스킨은 커버 이미지(1170px * 400px) 적용, Doo Be Doo 스킨은 커버 이미지(1700 * 600) 적용
+> 커버 이미지는 CSS에서 background cover이며, Spider's Web의 경우 400/1170 = 0.3418% = `padding-top: 34.18%` 값으로 계산
+
 - 사이트 헤더의 hgroup `h1`, `h2`는 text-indent: -9999로 적용 
-- 사이트 헤더는 메인 페이지에서만 출력. 개별 페이지에서는 감춤
-- 사이트 미들 배너 추가. 폰트 리사이즈, 폰트 패밀리 변경, 프린트 버튼 적용 
-	티스토리의 제한된 개별 페이지마다의 중복 코드 삭제 
-	내비게이션 메뉴 적용했던 검색 input을 미들 배너로 변경 
+- 사이트 헤더는 메인 페이지에서만 출력
+> 개별 페이지에서는 `display: none`
+
+### middle-banner
+
+- `skeleton-mid-banner` 사이트 중간 배너 추가 - 폰트 리사이즈, 폰트 패밀리 변경, 프린트 버튼 등 적용 영역 
+> 티스토리의 개별 페이지마다의 중복 코드 삭제, 내비게이션 메뉴에 적용했던 검색 input을 미들 배너에 적용
+
+### etc
+
 - 사이트 내 중요 링크들에 `.global-links` 적용
 - 최신글 위젯 IE7 CSS 버그 수정
-- 아이콘 font-awesome v3.2.1 대신에 개별 아이콘 적용. `SVG` 파일. IE9 이하에서는 `png` 파일로 대체
-    > font-awesome v3.2.1 사용 시 skin.html의 &lt;head&gt;에 코드 추가(유저 선택)
-    > &lt;link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"&gt;
-	> &lt;!--[if IE 7]&gt;
-	>   &lt;link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet"&gt;
-	> &lt;![endif]--&gt;
-	
-- style.css 파일에서 ie.css에 넣지 않는 속성은 `\9`로 적용 
-- style.css에서 `.text-justify` 삭제. bootstrap.less에 정규 클래스로 추가됨
-- style.css에서 `.img-center` 삭제. bootstrap.less에 정규 클래스로 추가됨
-- license-links를 `footer-links`로 수정 
-- `.entry-content img {}`에 IE 핵 추가 
-- 파비콘 링크수정./images/favicon.ico
-- print.less에 추가  
-	  >.skeleton-nav,.skeleton-header,.skeleton-mid-banner,.alert,.actionTrail,.paging,form,aside,.tistorytoolbar,.scrollup {display: none !important;}
+- 아이콘 font-awesome v3.2.1 대신에 개별 아이콘 `SVG` 파일이며 IE9 이하에서는 `png` 파일로 대체
+- font-awesome v3.2.1 사용 시 skin.html의 &lt;head&gt;에 코드 추가(유저 선택)
+> &lt;link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"&gt;
+>
+> &lt;!--[if IE 7]&gt;
+> &lt;link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet"&gt;
+> &lt;![endif]--&gt;
 
-- npm tistory-spidersweb-grunt와 tistory-doobedoo-grunt 버전 `1.1.0`으로 업데이트 
-- grunt에서 `grunt-recess` 삭제, `grunt-contrib-less` 추가, 참고 bootstrap 3 blog http://blog.getbootstrap.com/2014/01/30/bootstrap-3-1-0-released/
-	> nodejs v0.10.24
-	> "grunt": "~0.4.2",
-	> "grunt-contrib-clean": "~0.5.0",
-	> "grunt-contrib-jshint": "~0.8.0",
-	> "grunt-contrib-uglify": "~0.3.2",
-	> "grunt-contrib-watch": "~0.5.3",
-	> "grunt-contrib-less": "~0.9.0"
-- CSS `grunt` 실행 후 bootstrap.css 파일 사이즈 81KB (정규 123KB)
-- JavaScript `grunt` 실행 후 bootstrap.min.js(부트스크랩 외 기타 자바스크립트 포함) 파일 사이즈 35KB (정규 25KB)
+- style.css 파일에서 ie.css에 포함되지 않는 속성은 `\9`로 적용 
+- style.css에서 `.text-justify` 삭제. bootstrap.less에 정규 클래스로 추가
+- style.css에서 `.img-center` 삭제. bootstrap.less에 정규 클래스로 추가
+- license-links를 `footer-links`로 수정 
+- `.entry-content img`에 IE 핵 추가 
+- 파비콘 링크수정./images/favicon.ico
+
+## npm
+
+- `npm` tistory-spidersweb-grunt와 tistory-doobedoo-grunt 버전 `1.1.0`으로 업데이트 
+> grunt에서 `grunt-recess` 삭제, `grunt-contrib-less` 추가, 참고 bootstrap 3 blog http://blog.getbootstrap.com/2014/01/30/bootstrap-3-1-0-released/
+
+- npm 구성요소
+> nodejs v0.10.24
+> - "grunt": "~0.4.2",
+> - "grunt-contrib-clean": "~0.5.0",
+> - "grunt-contrib-jshint": "~0.8.0",
+> - "grunt-contrib-uglify": "~0.3.2",
+> - "grunt-contrib-watch": "~0.5.3",
+> - "grunt-contrib-less": "~0.9.0"
 
 # v1.2.2 (October 20, 2013)
 
