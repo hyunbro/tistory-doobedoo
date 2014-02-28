@@ -28,6 +28,3 @@ Hosted by [Daum](http://daum.net/) powered by [Tistory](http://tistory.com/)
 [http://markquery.github.io/license/](http://markquery.github.io/license/)
 
 Thanks.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/markquery/tistory-doobedoo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
