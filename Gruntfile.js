@@ -8,9 +8,8 @@ module.exports = function(grunt) {
       },
       all: [
         'Gruntfile.js',
-        'grunt/scripts/*.js',
-        'grunt/scripts/bootstrap/*.js',
-        '!grunt/scripts/bootstrap.min.js'
+        'src/scripts/*.js',
+        'src/scripts/bootstrap/*.js'
       ]
     },
     less: {
@@ -20,32 +19,32 @@ module.exports = function(grunt) {
           compress: true
         },
         files: {
-          'grunt/styles/bootstrap.css': [
-            'grunt/styles/style.less',
-            'grunt/styles/*.less',
-            'grunt/styles/*.css',
-            '!grunt/styles/bootstrap.css'
-          ]
+          'images/bootstrap.css': [
+            'src/styles/style.less'
+             ],
+                    'images/ie.css': [
+                        'src/styles/ie.less'
+                    ]
         }
       }
     },
     uglify: {
       dist: {
         files: {
-          'grunt/scripts/bootstrap.min.js': [
-            'grunt/scripts/bootstrap/transition.js',
-            'grunt/scripts/bootstrap/alert.js',
-            'grunt/scripts/bootstrap/button.js',
-            'grunt/scripts/bootstrap/carousel.js',
-            'grunt/scripts/bootstrap/collapse.js',
-            'grunt/scripts/bootstrap/dropdown.js',
-            'grunt/scripts/bootstrap/modal.js',
-            'grunt/scripts/bootstrap/tooltip.js',
-            'grunt/scripts/bootstrap/popover.js',
-            'grunt/scripts/bootstrap/scrollspy.js',
-            'grunt/scripts/bootstrap/tab.js',
-            'grunt/scripts/bootstrap/affix.js',
-            'grunt/scripts/*.js'
+          'images/app.js': [
+            'src/scripts/bootstrap/transition.js',
+            'src/scripts/bootstrap/alert.js',
+            'src/scripts/bootstrap/button.js',
+            'src/scripts/bootstrap/carousel.js',
+            'src/scripts/bootstrap/collapse.js',
+            'src/scripts/bootstrap/dropdown.js',
+            'src/scripts/bootstrap/modal.js',
+            'src/scripts/bootstrap/tooltip.js',
+            'src/scripts/bootstrap/popover.js',
+            'src/scripts/bootstrap/scrollspy.js',
+            'src/scripts/bootstrap/tab.js',
+            'src/scripts/bootstrap/affix.js',
+            'src/scripts/*.js'
           ]
         }
       }
@@ -53,7 +52,8 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: [
-          'grunt/styles/less/*.less'
+          'src/styles/*.less',
+          'src/styles/bootstrap/*.less'
         ],
         tasks: ['less']
       },
@@ -70,15 +70,15 @@ module.exports = function(grunt) {
           livereload: false
         },
         files: [
-          'grunt/styles/bootstrap.css',
-          'grunt/scripts/bootstrap.min.js'
+          'images/bootstrap.css',
+          'images/app.js'
         ]
       }
     },
     clean: {
       dist: [
-        'grunt/styles/bootstrap.css',
-        'grunt/scripts/bootstrap.min.js'
+        'images/bootstrap.css',
+        'images/app.js'
       ]
     }
   });

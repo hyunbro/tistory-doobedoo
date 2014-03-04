@@ -50,6 +50,7 @@ body {
   background-color:#fff;
   z-index:1000;
 }
+.skeleton-aisde { }
 .skeleton-footer {
   padding:20px;
   background: url(./images/footer.png);
@@ -244,7 +245,7 @@ header.banner hgroup h2 { color:#999; font-size: 14px; }
 }
 .mid-search {
   min-height:50px;
-  padding:15px 20px 0;
+  padding:25px 20px 0;
 }
 .search-input {
   max-width: 100px;
@@ -640,19 +641,32 @@ video { max-width:100%; height: auto; }
   width: 100%;
   height: 100%;
 }
-.plus{background:url(./images/plus-icon.svg) no-repeat center center}
-.minus{background:url(./images/minus-icon.svg) no-repeat center center}
-.font {background:url(./images/font-icon.svg) no-repeat center center}
-.search{background:url(./images/search-icon.svg) no-repeat center center}
-.print{background:url(./images/print-icon.svg) no-repeat center center}
-.tags {background:url(./images/tag-icon.svg) no-repeat center center}
-.trackbacks {background:url(./images/trackback-icon.svg) no-repeat center center}
-.comments {background:url(./images/comment-icon.svg) no-repeat center center}
-.help {background:url(./images/help-icon.svg) no-repeat center center}
-.uparrow {background:url(./images/uparrow-icon.svg) no-repeat center center}
+.plus-icon {background:url(./images/plus-icon.svg) no-repeat center center}
+.minus-icon {background:url(./images/minus-icon.svg) no-repeat center center}
+.font-icon {background:url(./images/font-icon.svg) no-repeat center center}
+.search-icon {background:url(./images/search-icon.svg) no-repeat center center}
+.print-icon {background:url(./images/print-icon.svg) no-repeat center center}
+.tags-icon {background:url(./images/tag-icon.svg) no-repeat center center}
+.trackbacks-icon {background:url(./images/trackback-icon.svg) no-repeat center center}
+.comments-icon {background:url(./images/comment-icon.svg) no-repeat center center}
+.help-icon {background:url(./images/help-icon.svg) no-repeat center center}
+.uparrow-icon {background:url(./images/uparrow-icon.svg) no-repeat center center}
+.facebook-icon {background:url(./images/facebook-icon.svg) no-repeat center center}
+.twitter-icon {background:url(./images/twitter-icon.svg) no-repeat center center}
+.google-icon {background:url(./images/google-icon.svg) no-repeat center center}
+.kakaotalk-icon {
+  background:url(./images/kakaotalk-icon-64.png) no-repeat center center;
+  background:url(./images/kakaotalk-icon.png) no-repeat center center\9;
+}
+.kakaostory-icon {
+  background:url(./images/kakaostory-icon-64.png) no-repeat center center;
+  background:url(./images/kakaostory-icon.png) no-repeat center center\9;
+}
 .svgicon { 
   position: relative;
   display: inline-block;
+  *display:inline;
+  *zoom:1;
   vertical-align: middle;
   height:15px;
   width:15px;
@@ -664,6 +678,51 @@ video { max-width:100%; height: auto; }
   opacity: 0.5;
   background-color:#fff\9; /* for IE7,IE8 */
 }
+.social-svgicon { 
+  position: relative;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+  vertical-align: middle;
+  max-height: 100%;
+  height:25px;
+  width:25px;
+  background-size:25px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+    background-color:#fff\9; /* for IE7,IE8 */
+}
+.util { line-height:3;}
+.social-link a {
+ padding:10px 5px 10px 10px;
+ text-decoration:none;
+ border:none;
+}
+.social-link a:last-child {
+ padding-right:10px;
+}
+.social-link a:hover {
+ padding:10px 5px 10px 10px;
+ text-decoration:none;
+ border:none;
+}
+.social-link a:hover:last-child {
+ padding-right:10px;
+}
+a.facebook-link {  background-color:#3B5998; }
+a.twitter-link { background-color:#00ACED; }
+a.google-link { background-color:#D14836; }
+a.kakaotalk-link { background-color:#fff314; }
+a.kakaostory-link { background-color:#fff314;border-left:1px solid #fff !important;}
+
+a:hover.facebook-link {  background-color:#ccc; }
+a:hover.twitter-link { background-color:#ccc; }
+a:hover.google-link { background-color:#ccc; }
+a:hover.kakaotalk-link { background-color:#ccc; }
+a:hover.kakaostory-link { background-color:#ccc; border-left:1px solid #fff !important;}
 
 /* global link style */
 .global-links a{color:#111;text-decoration:none;padding-bottom:2px}.global-links a:hover,.global-links a:focus{color:#555;text-decoration:none;border-bottom:1px solid #555;padding-bottom:2px}

@@ -3,9 +3,6 @@
     $("[href^=#]").click(function(e) {
       return e.preventDefault();
     });
-    $("a[data-toggle=popover]").popover().click(function(e) {
-      return e.preventDefault();
-    });
     $("a[data-toggle=tooltip]").tooltip();
     $(window).scroll(function() {
       if ($(this).scrollTop() > 100) {
@@ -25,5 +22,4 @@
       btnPlusClasseId: ".jfontsize-p"
     });
   });
-
 }).call(this);

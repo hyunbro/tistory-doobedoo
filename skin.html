@@ -8,7 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="[##_desc_##]">
-	<meta name="keywords" content="your, site, keyowrd, here">
+	<meta name="keywords" content="your, site, keyword, here">
 	<meta name="author" content="[##_blogger_##]">
 	<title>[##_page_title_##] | [##_title_##]</title>
 	<link rel="author" href="./images/humans.txt">
@@ -20,8 +20,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./images/apple-touch-icon-114x114-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./images/apple-touch-icon-144x144-precomposed.png">
 	<link href="./images/bootstrap.css" rel="stylesheet">
-	<link href="./images/theme.css" rel="stylesheet">
-	<link rel="stylesheet" media="screen" type="text/css" href="./style.css">
+	<link href="./style.css" rel="stylesheet" media="screen" type="text/css">
 	<!-- HTML5 shiv IE8 support of HTML5 elements and media queries / ie.css for tistory -->
 	<!--[if lt IE 9]>
 		<script async src="./images/html5shiv-3.7.0.js"></script>
@@ -119,10 +118,33 @@
 <section id="middle">
 <div class="row">
 <div class="col-sm-9 mid-banner">
-<div class="col-sm-nospace-3 col-sm-offset-9">
+
+<div class="row util">
+<div class="col-sm-8 social-link">
+<a href="http://www.facebook.com/sharer.php?u=<?php echo post_permalink( $ID ); ?>&t=<?php the_title(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+   target="_blank" alt="Share on Facebook" class="facebook-link"><span class="facebook-icon social-svgicon"></span>
+</a>
+
+<a href="https://twitter.com/share?url=<?php echo post_permalink( $ID ); ?>&via=<?php the_title(); ?>&text=<?php echo excerpt(20); ?>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+   target="_blank" alt="Share on Twitter" class="twitter-link"><span class="twitter-icon social-svgicon"></span>
+</a>
+
+<a href="https://plus.google.com/share?url=<?php echo post_permalink( $ID ); ?>"
+   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=480');return false;"
+   target="_blank" alt="Share on Google+" class="google-link"><span class="google-icon social-svgicon"></span>
+</a>
+
+<a href="#" onclick="javascript:executeURLLink()" alt="Share on kakaotalk" class="hidden-md hidden-lg kakaotalk-link"><span class="kakaotalk-icon social-svgicon"></span>
+</a>
+
+<a href="#" onclick="javascript:executeKakaoStoryLink()" alt="Share on kakaostory" class="hidden-md hidden-lg kakaostory-link"><span class="kakaostory-icon social-svgicon"></span>
+</a>
+</div>
+<div class="col-sm-4">
 	<div class="responsive-right2left">
 		<div class="btn-group">
-			<button type="button" class="dropdown-toggle btn-mq btn-xs" data-toggle="dropdown"><span class="font svgicon"></span></button>
+			<button type="button" class="dropdown-toggle btn-mq btn-xs" data-toggle="dropdown"><span class="font-icon svgicon"></span></button>
 				<ul class="dropdown-menu">
 				<li><a href="javascript:changeFontFamily('맑은 고딕, Malgun Gothic, sans-serif');">맑은고딕</a></li>
 				<li><a href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
@@ -137,26 +159,28 @@
 				<li><a href="javascript:changeFontFamily('Lucida Console, Monaco, monospace');">Lucida Console</a></li>
 				<li><a href="javascript:changeFontFamily('Courier New, Courier, monospace');">Courier New</a></li>
 				<li class="divider"></li>
-				<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <span class="help svgicon"></span></a></li>
+				<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <span class="help-icon svgicon"></span></a></li>
 				</ul>
-			<button type="button" class="jfontsize-p btn-mq btn-xs"><span class="plus svgicon"></span></button>
-			<button type="button" class="jfontsize-m btn-mq btn-xs"><span class="minus svgicon"></span></button>
-			<button type="button" class="btn-mq btn-xs" onclick="btnPrint()"><span class="print svgicon"></span></button>
+			<button type="button" class="jfontsize-p btn-mq btn-xs"><span class="plus-icon svgicon"></span></button>
+			<button type="button" class="jfontsize-m btn-mq btn-xs"><span class="minus-icon svgicon"></span></button>
+			<button type="button" class="btn-mq btn-xs" onclick="btnPrint()"><span class="print-icon svgicon"></span></button>
 		</div><!-- /.btn-group -->
 	</div><!-- /.responsive-right2left -->
-</div><!-- /.col-3 offset -->
+</div><!-- /.col-3 -->
+</div><!-- /.row row -->
+
 </div><!-- /.col-9 mid-banner -->
 <div class="col-sm-3 mid-search">
 <s_sidebar_element>
 <s_search>
 	<!-- Search -->
-	<button type="button" class="btn-mq btn-xs"><span class="search svgicon"></span></button>
+	<button type="button" class="btn-mq btn-xs"><span class="search-icon svgicon"></span></button>
 	<input role="search" type="text" class="search-input" placeholder="Search" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
 </s_search>
 </s_sidebar_element>
 </div><!-- /.col mid-search -->
 </div><!-- /.row -->
-</section><!-- /#middle -->
+</section><!-- /.#middle -->
 </div><!-- /.container-fluid skeleton-mid-banner -->
 
 <div class="container-fluid skeleton"><!-- site layout :  content /.container-fluid skeleton --> 
@@ -434,7 +458,7 @@
 <div class="col-sm-12 global-links">
 <section class="entry-tags">
 <s_tag_label>
-<span class="tags svgicon"></span> [##_tag_label_rep_##]
+<span class="tags-icon svgicon"></span> [##_tag_label_rep_##]
 </s_tag_label>
 </section>        
 </div><!-- /.col -->
@@ -449,7 +473,7 @@
 ================================================== -->
 <section class="actionTrail">
 <div class="global-links">
-	<p><span class="trackbacks svgicon"></span> <a href="#tb" onclick="[##_article_rep_tb_link_##]"> Trackback</a> <span class="cnt">[##_article_rep_tb_cnt_##]</span> : <span class="comments svgicon"></span> <a href="#rp" onclick="[##_article_rep_rp_link_##]"> Comment</a> <span class="cnt"> [##_article_rep_rp_cnt_##]</span> 
+	<p><span class="trackbacks-icon svgicon"></span> <a href="#tb" onclick="[##_article_rep_tb_link_##]"> Trackback</a> <span class="cnt">[##_article_rep_tb_cnt_##]</span> : <span class="comments-icon svgicon"></span> <a href="#rp" onclick="[##_article_rep_rp_link_##]"> Comment</a> <span class="cnt"> [##_article_rep_rp_cnt_##]</span> 
 	</p>
 </div>
 </section>
@@ -599,7 +623,7 @@
 </div><!-- site layout : content /.container-fluid skeleton -->
 
 
-<div class="container"><!-- main layout : aside container -->
+<div class="container skeleton-aside"><!-- main layout : aside container -->
 <div class="row"><!-- main layout : aside row -->
 <div class="col-sm-12"><!-- main layout : aside column -->
 <aside role="complementary">
@@ -773,7 +797,7 @@
 				<li class="text-muted">&middot;</li>
 				<li><a href="http://markquery.github.io/license/" target="_blank">License</a></li> 
 				<li class="text-muted">&middot;</li>
-				<li>Hosted by <a title="go to daum" href="http://daum.net/" target="_blank">Daum</a></li>
+				<li>Hosted on <a title="go to daum" href="http://daum.net/" target="_blank">Daum</a></li>
 				<li class="text-muted">&middot;</li>
 				<li>Powered by <a href="http://tistory.com/" target="_blank">Tistory</a></li>
 			</ul>
@@ -784,14 +808,13 @@
 </div><!-- /.container -->
 </div><!-- /.container-fluid skeleton-footer -->
 
-<a href="#" class="scrollup">Back to Top <span class="uparrow svgicon"></span></a>
+<a href="#" class="scrollup">Back to Top <span class="uparrow-icon svgicon"></span></a>
 <!-- jQuery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="./images/jquery-1.10.2.min.js"><\/script>')</script>
 <!-- JavaScript -->
 <script src="./images/modernizr-2.6.2.min.js"></script>
-<script src="./images/bootstrap.min.js"></script>
-<script src="./images/script.js"></script>
+<script src="./images/app.js"></script>
 <script>
 //<![CDATA[
    jQuery(function($) {
@@ -806,16 +829,19 @@
 function changeFontFamily(fontFam){document.getElementById("changeFontFamily").style.fontFamily=fontFam;}function btnPrint(){window.print();}$(document).ready(function(){var newURL = window.location.host + window.location.pathname;var pathArray = newURL.split( '/' );if(pathArray[1] == ""){$(".skeleton-header").addClass("header-init");}});
 
 if (!Modernizr.svg) {
-  $(".plus").css("background-image", "url(./images/plus-icon.png)");
-  $(".minus").css("background-image", "url(./images/minus-icon.png)");
-  $(".font").css("background-image", "url(./images/font-icon.png)");
-  $(".print").css("background-image", "url(./images/print-icon.png)");
-  $(".help").css("background-image", "url(./images/help-icon.png)");
-  $(".trackbacks").css("background-image", "url(./images/trackback-icon.png)");
-  $(".comments").css("background-image", "url(./images/comment-icon.png)");
-  $(".tags").css("background-image", "url(./images/tag-icon.png)");
-  $(".search").css("background-image", "url(./images/search-icon.png)");
-  $(".uparrow").css("background-image", "url(./images/uparrow-icon.png)");
+  $(".plus-icon").css("background-image", "url(./images/plus-icon.png)");
+  $(".minus-icon").css("background-image", "url(./images/minus-icon.png)");
+  $(".font-icon").css("background-image", "url(./images/font-icon.png)");
+  $(".print-icon").css("background-image", "url(./images/print-icon.png)");
+  $(".help-icon").css("background-image", "url(./images/help-icon.png)");
+  $(".trackbacks-icon").css("background-image", "url(./images/trackback-icon.png)");
+  $(".comments-icon").css("background-image", "url(./images/comment-icon.png)");
+  $(".tags-icon").css("background-image", "url(./images/tag-icon.png)");
+  $(".search-icon").css("background-image", "url(./images/search-icon.png)");
+  $(".uparrow-icon").css("background-image", "url(./images/uparrow-icon.png)");
+  $(".facebook-icon").css("background-image", "url(./images/facebook-icon.png)");
+  $(".twitter-icon").css("background-image", "url(./images/twitter-icon.png)");
+  $(".google-icon").css("background-image", "url(./images/google-icon.png)");
 }
 //]]>
 </script>
