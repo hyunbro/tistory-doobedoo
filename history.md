@@ -21,7 +21,7 @@ v3.0.0은 마크쿼리 스켈레톤 정규 릴리즈입니다.
 > 이는 `CSS`와 `JavaScript`의 용량을 많이 줄인 작업입니다. bootstrap의 모든 항목이 포함된 파일은 `/dist` 폴더에 추가
 
 - `bootstrap.min.js`와 `script.js` 파일을 `app.js`로 통합
-> ! CSS도 하나의 파일로 통합하는 것이 좋지만 티스토리 유저들이 티스토리의 특성상 관리자 페이지에서 style.css 편집을 하기에 `bootstrap.css`와 `style.css`는 유지딥니다. 만약 더이상 CSS 수정이 필요 없는 유저들을 위해 `Gruntfile.js` 수정 방법을 가이드로 제공. 
+> ! CSS도 하나의 파일로 통합하는 것이 좋지만 티스토리 유저들이 티스토리의 특성상 관리자 페이지에서 style.css 편집을 하기에 `bootstrap.css`와 `style.css`는 유지됩니다. 만약 더이상 CSS 수정이 필요 없는 유저들을 위해 `Gruntfile.js` 수정 방법을 가이드로 제공. 
 
 https://github.com/markquery/tistory-doobedoo/issues/3
 thanks Powerkiki 
