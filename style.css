@@ -1,9 +1,9 @@
 @charset "utf-8";
 /*
-Customize your content - markquery skeleton
+Code Is Content 
 -------------------------------------------------------------
 Skeleton:    Doo Be Doo
-Version:    3.0.0(b)
+Version:    3.0.0
 Homepage:    http://markquery.com
 email:    ungki.h@gmail.com
 License:    http://markquery.github.io/license
@@ -22,7 +22,6 @@ body {
   background-color:#fff;
 }
 .skeleton-nav {
-  /* padding: 0 20px; */
   padding:0 20px\9;
   border-left:1px solid #ccc;
   border-right:1px solid #ccc;
@@ -31,11 +30,6 @@ body {
   z-index:1030;
 }
 .skeleton-header {
-  /* 
-  padding: 0 20px; 
-  border-left:1px solid #ccc;
-  border-right:1px solid #ccc;
-  */
   display:none; 
   padding:0 20px\9;
   border-left:1px solid #ccc\9;
@@ -67,7 +61,7 @@ body {
   position: relative;
   display:block;
   *display:inline;
-  zoom:1;
+  *zoom:1;
   font-size:14px;
   font-weight:900;
 }
@@ -229,13 +223,6 @@ header.banner hgroup h2 {
 display:block;
 }
 
-/* 
-header.banner hgroup h1 { font-weight: bold; }
-header.banner hgroup h1 a { color: #111; }
-header.banner hgroup h1 a:hover { color:#999; }
-header.banner hgroup h2 { color:#999; font-size: 14px; }
-*/
-
 /* site middle banner
 -------------------------------------------------- */
 .mid-banner {
@@ -287,7 +274,7 @@ header.banner hgroup h2 { color:#999; font-size: 14px; }
   background-image :none;
 }
 
-/* content / Posts use the hNews microformat. (http://microformats.org/wiki/hnews)
+/* Content use the hNews microformat. (http://microformats.org/wiki/hnews)
 -------------------------------------------------- */
 .main { }
 .hentry { 
@@ -517,7 +504,30 @@ border-left-width: 0;
   color: #999;
   font-size:12px;
 }
+.widget-inline-inner ul {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+}
+.widget-inline-inner ul li {
+  display:inline;
+}
+.widget-inline-inner ul li a {
+  padding:3px;
+  line-height:3;
+  background-color:#f1f1f1;
+  color:#999;
+  text-decoration: none;  
+}
+.widget-inline-inner ul li a:hover {
+  padding:3px;
+  background-color: #10a4ff;  
+  color:#fff;
+  text-decoration: none;  
+}
 
+/* widget feed
+-------------------------------------------------- */
 .widget-feed-inner {
   margin-top:40px;
   padding:0;
@@ -654,14 +664,8 @@ video { max-width:100%; height: auto; }
 .facebook-icon {background:url(./images/facebook-icon.svg) no-repeat center center}
 .twitter-icon {background:url(./images/twitter-icon.svg) no-repeat center center}
 .google-icon {background:url(./images/google-icon.svg) no-repeat center center}
-.kakaotalk-icon {
-  background:url(./images/kakaotalk-icon-64.png) no-repeat center center;
-  background:url(./images/kakaotalk-icon.png) no-repeat center center\9;
-}
-.kakaostory-icon {
-  background:url(./images/kakaostory-icon-64.png) no-repeat center center;
-  background:url(./images/kakaostory-icon.png) no-repeat center center\9;
-}
+.kakaotalk-icon { background:url(./images/kakaotalk-icon-64.png) no-repeat center center; background:url(./images/kakaotalk-icon.png) no-repeat center center\9; }
+.kakaostory-icon { background:url(./images/kakaostory-icon-64.png) no-repeat center center; background:url(./images/kakaostory-icon.png) no-repeat center center\9; }
 .svgicon { 
   position: relative;
   display: inline-block;
@@ -695,34 +699,43 @@ video { max-width:100%; height: auto; }
   opacity: 0.5;
     background-color:#fff\9; /* for IE7,IE8 */
 }
-.util { line-height:3;}
+.social-group { line-height:3;}
+.social-link ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  /* for flex */
+  display: -webkit-box;      
+  display: -moz-box;  
+  display: -ms-flexbox;   
+  display: -webkit-flex;   
+  display: flex;      
+}
+.social-link ul li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
 .social-link a {
- padding:10px 5px 10px 10px;
+ padding:10px 10px 13px;
  text-decoration:none;
  border:none;
-}
-.social-link a:last-child {
- padding-right:10px;
 }
 .social-link a:hover {
- padding:10px 5px 10px 10px;
+ padding:10px 10px 13px;
  text-decoration:none;
  border:none;
-}
-.social-link a:hover:last-child {
- padding-right:10px;
 }
 a.facebook-link {  background-color:#3B5998; }
 a.twitter-link { background-color:#00ACED; }
 a.google-link { background-color:#D14836; }
 a.kakaotalk-link { background-color:#fff314; }
-a.kakaostory-link { background-color:#fff314;border-left:1px solid #fff !important;}
-
+a.kakaostory-link { background-color:#fff314;border-left:1px solid #fff;}
 a:hover.facebook-link {  background-color:#ccc; }
 a:hover.twitter-link { background-color:#ccc; }
 a:hover.google-link { background-color:#ccc; }
 a:hover.kakaotalk-link { background-color:#ccc; }
-a:hover.kakaostory-link { background-color:#ccc; border-left:1px solid #fff !important;}
+a:hover.kakaostory-link { background-color:#ccc; border-left:1px solid #fff;}
 
 /* global link style */
 .global-links a{color:#111;text-decoration:none;padding-bottom:2px}.global-links a:hover,.global-links a:focus{color:#555;text-decoration:none;border-bottom:1px solid #555;padding-bottom:2px}

@@ -1,3 +1,59 @@
+# v3.0.0 (March 5, 2014)
+v3.0.0은 마크쿼리 스켈레톤 정규 릴리즈입니다. 
+
+## New features & Issue 
+- 마크쿼리의 `Code is content`로 구호를 변경했습니다. 
+- 가이드 문서 제작을 위해 GitHub에 docs 저장소를 생성했습니다. 유저 누구나 참여 가능하며, 블로그에 포스팅한 내용 링크도 가능합니다. Git 사용이 어렵다면 wiki 페이지에서 markdown으로 쉽게 작성할 수 있습니다. (github 회원가입 필요)
+	> docs 저장소 - https://github.com/markquery/docs
+	> docs wiki - https://github.com/markquery/docs/wiki
+
+- bootstrap v2.3.1 스켈레톤 삭제. 더이상 다운로드를 지원하지 않습니다. 
+- IE7 브라우저 사용자에게는 다음의 문구가 표시됩니다. 
+	> Windows XP는 2014년 4월 8일 지원 종료됩니다. Microsoft로부터 보안 업데이트 등의 Windows XP 관련 업데이트가 더 이상 제공되지 않습니다. 
+
+- `dist` 폴더 생성. grunt를 설치&실행하지 않는 유저들을 위해 커스터마이징된 bootstrap의 모든 항목이 포함되어 있는 `CSS`와 `JavaScript` 파일 제공
+- `test` 폴더 생성. 예제 등의 코드가 포함될 예정
+
+## Grunt 
+
+- `/grunt` 폴더를 `/src`로 폴더명 변경 
+- bootstrap의 `CSS`와 `JavaScript` 스켈레톤에서 사용 안하는 항목 코멘트 처리
+> 이는 `CSS`와 `JavaScript`의 용량을 많이 줄인 작업입니다. bootstrap의 모든 항목이 포함된 파일은 `/dist` 폴더에 추가
+
+- `bootstrap.min.js`와 `script.js` 파일을 `app.js`로 통합
+> ! CSS도 하나의 파일로 통합하는 것이 좋지만 티스토리 유저들이 티스토리의 특성상 관리자 페이지에서 style.css 편집을 하기에 `bootstrap.css`와 `style.css`는 유지딥니다. 만약 더이상 CSS 수정이 필요 없는 유저들을 위해 `Gruntfile.js` 수정 방법을 가이드로 제공. 
+
+https://github.com/markquery/tistory-doobedoo/issues/3
+thanks Powerkiki 
+
+### middle-banner
+
+- 소셜 버튼 추가. `페이스북`, `트위터`, `구글+`, `카카오톡`, `카카오스토리`. 카카오톡과 카카오스토리는 테블릿 이하에서만 활성
+> 카카오톡과 카카오스토리 아이콘은 png 파일이며, kakao.link.js 추가 
+> https://github.com/kakao/kakaolink-web
+
+### tags style for sidebar & tags page
+
+- 사이드바 태그 위젯을 `inline`으로 변경하고 bootstrap의 라벨 사용 중단
+> 유저들의 공통되고 빈번한 요청이었으며 <ul>에 inline 클래스 지정만으로는 완전히 해결이 안되어 `widget-inline-inner`로 구분
+
+### bootstrap v3
+
+- `navbar.less`에 margin-bottom 코멘트 처리 
+
+### Icon
+
+- 아이콘 일부 [flaticon](http://www.flaticon.com/)의 아이콘으로 변경 
+> 아이콘은 svg 파일이며, CSS Sprites 처리 보다는 유저가 아이콘 변경 및 추가 편의를 위해 개별 아이콘으로 제공
+
+thanks 밤샌부엉이
+
+### npm 
+
+- `tistory-spidersweb`, `tistory-doobedoo` 업데이트. v3.0.0 이전 npm 패키지 레지스트리 삭제
+> - "grunt-contrib-less": "~0.10.0"
+> - "grunt-contrib-uglify": "~0.4.0"
+
 # v3.0.0b (February 9, 2014)
 v3.0.0b는 pre-release입니다. history.md에 기재하지 않은 수정 또는 변경 사항이 있을 수 있습니다.
 

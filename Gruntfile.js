@@ -8,8 +8,7 @@ module.exports = function(grunt) {
       },
       all: [
         'Gruntfile.js',
-        'src/scripts/*.js',
-        'src/scripts/bootstrap/*.js'
+        'src/scripts/*.js'
       ]
     },
     less: {
@@ -35,15 +34,15 @@ module.exports = function(grunt) {
             'src/scripts/bootstrap/transition.js',
             'src/scripts/bootstrap/alert.js',
             'src/scripts/bootstrap/button.js',
-            'src/scripts/bootstrap/carousel.js',
-            'src/scripts/bootstrap/collapse.js',
+//            'src/scripts/bootstrap/carousel.js',
+//            'src/scripts/bootstrap/collapse.js',
             'src/scripts/bootstrap/dropdown.js',
-            'src/scripts/bootstrap/modal.js',
-            'src/scripts/bootstrap/tooltip.js',
-            'src/scripts/bootstrap/popover.js',
-            'src/scripts/bootstrap/scrollspy.js',
-            'src/scripts/bootstrap/tab.js',
-            'src/scripts/bootstrap/affix.js',
+//            'src/scripts/bootstrap/modal.js',
+//            'src/scripts/bootstrap/tooltip.js',
+//            'src/scripts/bootstrap/popover.js',
+//            'src/scripts/bootstrap/scrollspy.js',
+//            'src/scripts/bootstrap/tab.js',
+//            'src/scripts/bootstrap/affix.js',
             'src/scripts/*.js'
           ]
         }

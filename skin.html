@@ -14,7 +14,7 @@
 	<link rel="author" href="./images/humans.txt">
 	<link rel="profile" href="http://microformats.org/profile/hcard">
 	<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]">
-	<link rel="shortcut icon" href="./images/favicon.ico">
+	<link rel="shortcut icon" href="[##_blog_link_##]favicon.ico">
 	<link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon-57x57-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./images/apple-touch-icon-72x72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./images/apple-touch-icon-114x114-precomposed.png">
@@ -30,7 +30,7 @@
 <body>
 <s_t3>
 <!--[if lt IE 8]>
-<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.<br>오래된 브라우저를 사용하는 것은 컴퓨터를 안전하지 않게 만듭니다. <a href="http://browsehappy.com/">업그레이드</a> 또는 더 좋은 인터넷 경험을 위해 <a href="http://www.google.com/chromeframe/?redirect=true">크롬</a>을 사용하세요.</p>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.<br>오래된 브라우저를 사용하는 것은 컴퓨터를 안전하지 않게 만듭니다. <a href="http://browsehappy.com/">업그레이드</a> 또는 더 좋은 인터넷 경험을 위해 <a href="http://www.google.com/chromeframe/?redirect=true">크롬</a>을 사용하세요.  Windows XP는 2014년 4월 8일 지원 종료됩니다. Microsoft로부터 보안 업데이트 등의 Windows XP 관련 업데이트가 더 이상 제공되지 않습니다.</p>
 <![endif]-->
 
 <a href="#content" class="sr-only">skip to content</a>
@@ -119,28 +119,16 @@
 <div class="row">
 <div class="col-sm-9 mid-banner">
 
-<div class="row util">
+<div class="row social-group">
 <div class="col-sm-8 social-link">
-<a href="http://www.facebook.com/sharer.php?u=<?php echo post_permalink( $ID ); ?>&t=<?php the_title(); ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
-   target="_blank" alt="Share on Facebook" class="facebook-link"><span class="facebook-icon social-svgicon"></span>
-</a>
-
-<a href="https://twitter.com/share?url=<?php echo post_permalink( $ID ); ?>&via=<?php the_title(); ?>&text=<?php echo excerpt(20); ?>"
-   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
-   target="_blank" alt="Share on Twitter" class="twitter-link"><span class="twitter-icon social-svgicon"></span>
-</a>
-
-<a href="https://plus.google.com/share?url=<?php echo post_permalink( $ID ); ?>"
-   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=480');return false;"
-   target="_blank" alt="Share on Google+" class="google-link"><span class="google-icon social-svgicon"></span>
-</a>
-
-<a href="#" onclick="javascript:executeURLLink()" alt="Share on kakaotalk" class="hidden-md hidden-lg kakaotalk-link"><span class="kakaotalk-icon social-svgicon"></span>
-</a>
-
-<a href="#" onclick="javascript:executeKakaoStoryLink()" alt="Share on kakaostory" class="hidden-md hidden-lg kakaostory-link"><span class="kakaostory-icon social-svgicon"></span>
-</a>
-</div>
+<ul>
+<li><a href="#" onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(document.URL)+'&t='+encodeURIComponent(document.title), 'facebook-share-dialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Facebook" class="facebook-link"><span class="facebook-icon social-svgicon"></span></a></li>
+<li><a href="#" onclick="javascript:window.open('https://twitter.com/share?url='+encodeURIComponent(document.URL)+'&via='+encodeURIComponent(document.title), 'twitter-share-dialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Twitter" class="twitter-link"><span class="twitter-icon social-svgicon"></span></a></li>
+<li><a href="#" onclick="javascript:window.open('https://plus.google.com/share?url='+encodeURIComponent(document.URL), 'googleplus-share-dialog','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=600');return false;" target="_blank" alt="Share on Google+" class="google-link"><span class="google-icon social-svgicon"></span></a></li>
+<li><a href="#" onclick="javascript:executeURLLink()" alt="Share on kakaotalk" class="hidden-md hidden-lg kakaotalk-link"><span class="kakaotalk-icon social-svgicon"></span></a></li>
+<li><a href="#" onclick="javascript:executeKakaoStoryLink()" alt="Share on kakaostory" class="hidden-md hidden-lg kakaostory-link"><span class="kakaostory-icon social-svgicon"></span></a></li>
+</ul>
+</div><!-- /.col-8 -->
 <div class="col-sm-4">
 	<div class="responsive-right2left">
 		<div class="btn-group">
@@ -166,7 +154,7 @@
 			<button type="button" class="btn-mq btn-xs" onclick="btnPrint()"><span class="print-icon svgicon"></span></button>
 		</div><!-- /.btn-group -->
 	</div><!-- /.responsive-right2left -->
-</div><!-- /.col-3 -->
+</div><!-- /.col-4 -->
 </div><!-- /.row row -->
 
 </div><!-- /.col-9 mid-banner -->
@@ -251,16 +239,14 @@
 ================================================== -->
 <s_tag>
 <section class="taglog">
-<div class="row"> 
-<div class="col-sm-12">
 	<h3>Tags</h3>
-	<ul class="list-inline">
+	<div class="widget-inline-inner">
+	<ul>
 	<s_tag_rep>
 	<li><a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a></li>
 	</s_tag_rep>
 	</ul>
-</div><!-- /.col -->
-</div><!-- /.row -->
+	</div>
 </section>
 </s_tag>
 
@@ -730,18 +716,16 @@
 
 	 <s_sidebar_element>
 	 <!-- Global tags -->
-		<div class="col-sm-4">
-			<section class="widget">
-				<div class="widget-inner">
-				<h3>Tag List</h3>
-					<ul>
-						<s_random_tags>
-						<li> <a href="[##_tag_link_##]" class="[##_tag_class_##]"><span class="label label-default"> [##_tag_name_##]</span></a></li>
-						</s_random_tags>
-					</ul>
-				</div>
-			</section>
+	<section class="widget">
+		<div class="widget-inline-inner">
+		<h3>Tag List</h3>
+			<ul>
+				<s_random_tags>
+				<li> <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]></a></li>
+				</s_random_tags>
+			</ul>
 		</div>
+	</section>
 	</s_sidebar_element>
 
 	 <s_sidebar_element>
@@ -791,13 +775,11 @@
 		<div class="row">
 		<div class="col-xs-12">
 			<ul class="footer-links">
-				<li>Customize Your Content <a href="http://markquery.com/" target="_blank">마크쿼리</a></li>
+				<li>Code Is Content by <a href="http://markquery.com/" target="_blank">마크쿼리</a></li>
 				<li class="text-muted">&middot;</li>
 				<li><a href="http://github.com/markquery/" target="_blank">GitHub</a></li> 
 				<li class="text-muted">&middot;</li>
 				<li><a href="http://markquery.github.io/license/" target="_blank">License</a></li> 
-				<li class="text-muted">&middot;</li>
-				<li>Hosted on <a title="go to daum" href="http://daum.net/" target="_blank">Daum</a></li>
 				<li class="text-muted">&middot;</li>
 				<li>Powered by <a href="http://tistory.com/" target="_blank">Tistory</a></li>
 			</ul>
@@ -842,6 +824,27 @@ if (!Modernizr.svg) {
   $(".facebook-icon").css("background-image", "url(./images/facebook-icon.png)");
   $(".twitter-icon").css("background-image", "url(./images/twitter-icon.png)");
   $(".google-icon").css("background-image", "url(./images/google-icon.png)");
+}
+function executeURLLink()
+{
+    kakao.link("talk").send({
+        msg : "[##_page_title_##]",
+        url : document.URL,
+        appid : location.hostname,
+        appver : "3.0.0",
+        appname : "[##_title_##]",
+        type : "link"
+    });
+}
+function executeKakaoStoryLink()
+  {
+    kakao.link("story").send({   
+        post : document.URL,
+        appid : location.hostname,
+        appver : "3.0.0",
+        apiver : "1.0",
+        appname : "[##_title_##]"
+    });
 }
 //]]>
 </script>
