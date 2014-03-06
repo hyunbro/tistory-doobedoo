@@ -1,3 +1,17 @@
+# v3.0.1 (March 6, 2014)
+
+- `Hotfix` 사이드바 태그 목록 오류 수정 form Nightowlkr 밤샌부엉이님 
+
+오류 수정 코드는 다음과 같습니다. 코드 정리는 다음 업데이트에서 진행합니다. 
+
+## tistory-spidersweb 
+> HTML수정  : https://github.com/markquery/tistory-spidersweb/commit/49729b0e6a3e81a36ea9c338c977a942bceb616e
+> CSS추가 : https://github.com/markquery/tistory-spidersweb/commit/2e4ff07b18b33549dcb60e0544619625b6f60a97
+
+## tistory-doobedoo
+> HTML수정 : https://github.com/markquery/tistory-doobedoo/commit/0f9f0dbaea5b95964dfccf9e4d239d4412049544
+> CSS추가 : https://github.com/markquery/tistory-doobedoo/commit/73c77c7214d71337321a6427dbd2f04efa2ce30c
+
 # v3.0.0 (March 5, 2014)
 v3.0.0은 마크쿼리 스켈레톤 정규 릴리즈입니다. 
 
