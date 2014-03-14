@@ -1,3 +1,6 @@
+# v3.0.3 (March 14, 2014)
+alt 속성 수정
+
 # v3.0.2 (March 14, 2014)
 
 ## Apple Touch Icons
