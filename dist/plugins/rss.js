@@ -1,1 +1,280 @@
-(function(e){"use strict";var t=function(e,t,n,r){this.target=e;this.url=t;this.html=[];this.effectQueue=[];this.options=jQuery.extend({ssl:false,limit:null,key:null,layoutTemplate:"<ul>{entries}</ul>",entryTemplate:'<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>',tokens:{},outputMode:"json",effect:"show",error:function(){throw new Error("jQuery RSS: url don't link to RSS-Feed")},success:function(){}},n||{});this.callback=r||this.options.success};t.htmlTags=["doctype","html","head","title","base","link","meta","style","script","noscript","body","article","nav","aside","section","header","footer","h1-h6","hgroup","address","p","hr","pre","blockquote","ol","ul","li","dl","dt","dd","figure","figcaption","div","table","caption","thead","tbody","tfoot","tr","th","td","col","colgroup","form","fieldset","legend","label","input","button","select","datalist","optgroup","option","textarea","keygen","output","progress","meter","details","summary","command","menu","del","ins","img","iframe","embed","object","param","video","audio","source","canvas","track","map","area","a","em","strong","i","b","u","s","small","abbr","q","cite","dfn","sub","sup","time","code","kbd","samp","var","mark","bdi","bdo","ruby","rt","rp","span","br","wbr"];t.prototype.load=function(t){var n="http"+(this.options.ssl?"s":""),r=n+"://ajax.googleapis.com/ajax/services/feed/load",i=r+"?v=1.0&output="+this.options.outputMode+"&callback=?&q="+encodeURIComponent(this.url);if(this.options.limit!=null)i+="&num="+this.options.limit;if(this.options.key!=null)i+="&key="+this.options.key;e.getJSON(i,t)};t.prototype.render=function(){var t=this;this.load(function(n){try{t.entries=n.responseData.feed.entries}catch(r){t.entries=[];return t.options.error.call(t)}var i=t.generateHTMLForEntries();t.target.append(i.layout);if(i.entries.length!==0){t.appendEntriesAndApplyEffects(i.layout,i.entries)}if(t.effectQueue.length>0){t.executeEffectQueue(t.callback)}else{e.isFunction(t.callback)&&t.callback.call(t)}})};t.prototype.appendEntriesAndApplyEffects=function(t,n){var r=this;e.each(n,function(e,n){var i=r.wrapContent(n);if(r.options.effect==="show"){t.append(i)}else{i.css({display:"none"});t.append(i);r.applyEffect(i,r.options.effect)}})};t.prototype.generateHTMLForEntries=function(){var e=this,t={entries:[],layout:null};jQuery(this.entries).each(function(){var n=this;if(e.isRelevant(n)){var r=e.evaluateStringForEntry(e.options.entryTemplate,n);t.entries.push(r)}});if(!!this.options.entryTemplate){t.layout=this.wrapContent(this.options.layoutTemplate.replace("{entries}",""))}else{t.layout=this.wrapContent(t.entries.join("\n"))}return t};t.prototype.wrapContent=function(t){if(e.trim(t).indexOf("<")!==0){return e("<div>"+t+"</div>")}else{return e(t)}};t.prototype.applyEffect=function(e,t,n){var r=this;switch(t){case"slide":e.slideDown("slow",n);break;case"slideFast":e.slideDown(n);break;case"slideSynced":r.effectQueue.push({element:e,effect:"slide"});break;case"slideFastSynced":r.effectQueue.push({element:e,effect:"slideFast"});break}};t.prototype.executeEffectQueue=function(e){var t=this;this.effectQueue.reverse();var n=function(){var r=t.effectQueue.pop();if(r){t.applyEffect(r.element,r.effect,n)}else{e&&e()}};n()};t.prototype.evaluateStringForEntry=function(e,t){var n=e,r=this;jQuery(e.match(/(\{.*?\})/g)).each(function(){var e=this.toString();n=n.replace(e,r.getValueForToken(e,t))});return n};t.prototype.isRelevant=function(e){var t=this.getTokenMap(e);if(this.options.filter){if(this.options.filterLimit&&this.options.filterLimit==this.html.length){return false}else{return this.options.filter(e,t)}}else{return true}};t.prototype.getTokenMap=function(e){return jQuery.extend({url:e.link,author:e.author,date:e.publishedDate,title:e.title,body:e.content,shortBody:e.contentSnippet,bodyPlain:function(e){var n=e.content.replace(/<script[\\r\\\s\S]*<\/script>/mgi,"").replace(/<\/?[^>]+>/gi,"");for(var r=0;r<t.htmlTags.length;r++){n=n.replace(new RegExp("<"+t.htmlTags[r],"gi"),"")}return n}(e),shortBodyPlain:e.contentSnippet.replace(/<\/?[^>]+>/gi,""),index:jQuery.inArray(e,this.entries),totalEntries:this.entries.length,teaserImage:function(e){try{return e.content.match(/(<img.*?>)/gi)[0]}catch(t){return""}}(e),teaserImageUrl:function(e){try{return e.content.match(/(<img.*?>)/gi)[0].match(/src="(.*?)"/)[1]}catch(t){return""}}(e)},this.options.tokens)};t.prototype.getValueForToken=function(e,t){var n=this.getTokenMap(t),r=e.replace(/[\{\}]/g,""),i=n[r];if(typeof i!="undefined")return typeof i=="function"?i(t,n):i;else throw new Error("Unknown token: "+e)};e.fn.rss=function(e,n,r){(new t(this,e,n,r)).render()}})(jQuery)
+(function($) {
+  "use strict";
+
+  var RSS = function(target, url, options, callback) {
+    this.target       = target
+    this.url          = url
+    this.html         = []
+    this.effectQueue  = []
+
+    this.options = $.extend({
+      ssl: false,
+      limit: null,
+      key: null,
+      layoutTemplate: '<ul>{entries}</ul>',
+      entryTemplate: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>',
+      tokens: {},
+      outputMode: 'json',
+      effect: 'show',
+      error: function() {
+        console.log("jQuery RSS: url doesn't link to RSS-Feed");
+      },
+      success: function(){}
+    }, options || {})
+
+    this.callback = callback || this.options.success
+  }
+
+  RSS.htmlTags = ["doctype", "html", "head", "title", "base", "link", "meta", "style", "script", "noscript", "body", "article", "nav", "aside", "section", "header", "footer", "h1-h6", "hgroup", "address", "p", "hr", "pre", "blockquote", "ol", "ul", "li", "dl", "dt", "dd", "figure", "figcaption", "div", "table", "caption", "thead", "tbody", "tfoot", "tr", "th", "td", "col", "colgroup", "form", "fieldset", "legend", "label", "input", "button", "select", "datalist", "optgroup", "option", "textarea", "keygen", "output", "progress", "meter", "details", "summary", "command", "menu", "del", "ins", "img", "iframe", "embed", "object", "param", "video", "audio", "source", "canvas", "track", "map", "area", "a", "em", "strong", "i", "b", "u", "s", "small", "abbr", "q", "cite", "dfn", "sub", "sup", "time", "code", "kbd", "samp", "var", "mark", "bdi", "bdo", "ruby", "rt", "rp", "span", "br", "wbr"]
+
+  RSS.prototype.load = function(callback) {
+    var apiProtocol = "http" + (this.options.ssl ? "s" : "")
+      , apiHost     = apiProtocol + "://ajax.googleapis.com/ajax/services/feed/load"
+      , apiUrl      = apiHost + "?v=1.0&output=" + this.options.outputMode + "&callback=?&q=" + encodeURIComponent(this.url)
+
+    if (this.options.limit != null) apiUrl += "&num=" + this.options.limit;
+    if (this.options.key != null)   apiUrl += "&key=" + this.options.key;
+
+    $.getJSON(apiUrl, callback)
+  }
+
+  RSS.prototype.render = function() {
+    var self = this
+
+    this.load(function(data) {
+      try {
+        self.feed    = data.responseData.feed
+        self.entries = data.responseData.feed.entries
+      } catch(e) {
+        self.entries = []
+        self.feed    = null
+        return self.options.error.call(self)
+      }
+
+      var html = self.generateHTMLForEntries()
+
+      self.target.append(html.layout)
+
+      if (html.entries.length !== 0) {
+        self.appendEntriesAndApplyEffects($("entries", html.layout), html.entries)
+      }
+
+      if (self.effectQueue.length > 0) {
+        self.executeEffectQueue(self.callback)
+      } else {
+        $.isFunction(self.callback) && self.callback.call(self);
+      }
+    })
+  }
+
+  RSS.prototype.appendEntriesAndApplyEffects = function(target, entries) {
+    var self = this
+
+    $.each(entries, function(idx, entry) {
+      var $html = self.wrapContent(entry)
+
+      if(self.options.effect === 'show') {
+        target.before($html)
+      } else {
+        $html.css({ display: 'none' })
+        target.before($html)
+        self.applyEffect($html, self.options.effect)
+      }
+    })
+
+    target.remove()
+  }
+
+  RSS.prototype.generateHTMLForEntries = function() {
+    var self   = this
+      , result = {
+          entries: [],
+          layout:  null
+        }
+
+    $(this.entries).each(function() {
+      var entry = this
+
+      if(self.isRelevant(entry)) {
+        var evaluatedString = self.evaluateStringForEntry(self.options.entryTemplate, entry)
+        result.entries.push(evaluatedString)
+      }
+    })
+
+    if(!!this.options.entryTemplate) {
+      // we have an entryTemplate
+      result.layout = this.wrapContent(this.options.layoutTemplate.replace("{entries}", "<entries></entries>"))
+    } else {
+      // no entryTemplate available
+      result.layout = this.wrapContent("<div><entries></entries></div>")
+    }
+
+    return result
+  }
+
+  RSS.prototype.wrapContent = function(content) {
+    if($.trim(content).indexOf('<') !== 0) {
+      // the content has no html => create a surrounding div
+      return $("<div>" + content + "</div>")
+    } else {
+      // the content has html => don't touch it
+      return $(content)
+    }
+  }
+
+  RSS.prototype.applyEffect = function($element, effect, callback) {
+    var self = this
+
+    switch(effect) {
+      case 'slide':
+        $element.slideDown('slow', callback)
+        break
+      case 'slideFast':
+        $element.slideDown(callback)
+        break
+      case 'slideSynced':
+        self.effectQueue.push({ element: $element, effect: 'slide' })
+        break
+      case 'slideFastSynced':
+        self.effectQueue.push({ element: $element, effect: 'slideFast' })
+        break
+    }
+  }
+
+  RSS.prototype.executeEffectQueue = function(callback) {
+    var self = this
+
+    this.effectQueue.reverse()
+
+    var executeEffectQueueItem = function() {
+      var item = self.effectQueue.pop()
+
+      if(item) {
+        self.applyEffect(item.element, item.effect, executeEffectQueueItem)
+      } else {
+        callback && callback()
+      }
+    }
+
+    executeEffectQueueItem()
+  }
+
+  RSS.prototype.evaluateStringForEntry = function(string, entry) {
+    var result = string
+      , self   = this
+
+    $(string.match(/(\{.*?\})/g)).each(function() {
+      var token = this.toString()
+      result = result.replace(token, self.getValueForToken(token, entry))
+    })
+
+    return result
+  }
+
+  RSS.prototype.isRelevant = function(entry) {
+    var tokenMap = this.getTokenMap(entry)
+
+    if(this.options.filter) {
+      if(this.options.filterLimit && (this.options.filterLimit == this.html.length)) {
+        return false
+      } else {
+        return this.options.filter(entry, tokenMap)
+      }
+    } else {
+      return true
+    }
+  }
+
+  RSS.prototype.getTokenMap = function(entry) {
+    if (!this.feedTokens) {
+      var feed = JSON.parse(JSON.stringify(this.feed))
+      delete feed.entries
+      this.feedTokens = feed
+    }
+
+    return $.extend({
+      feed:      this.feedTokens,
+      url:       entry.link,
+      author:    entry.author,
+      date:      entry.publishedDate,
+      kdate: (function(entry) {
+      var apidate = new Date(entry.publishedDate);
+      var ndate = apidate.getFullYear() + '년' + (apidate.getMonth() + 1) + '월' + apidate.getDate() + '일';
+        return ndate
+      })(entry),
+
+      title:     entry.title,
+      body:      entry.content,
+      shortBody: entry.contentSnippet,
+
+      bodyPlain: (function(entry) {
+        var result = entry.content
+          .replace(/<script[\\r\\\s\S]*<\/script>/mgi, '')
+          .replace(/<\/?[^>]+>/gi, '')
+
+        for(var i = 0; i < RSS.htmlTags.length; i++) {
+          result = result.replace(new RegExp('<' + RSS.htmlTags[i], 'gi'), '')
+        }
+
+        return result
+      })(entry),
+
+      shortBodyPlain: entry.contentSnippet.replace(/<\/?[^>]+>/gi, ''),
+      index:          $.inArray(entry, this.entries),
+      totalEntries:   this.entries.length,
+
+      teaserImage:    (function(entry){
+        try { return entry.content.match(/(<img.*?>)/gi)[0] }
+        catch(e) { return "" }
+      })(entry),
+
+      teaserImageUrl: (function(entry) {
+        try { return entry.content.match(/(<img.*?>)/gi)[0].match(/src="(.*?)"/)[1] }
+        catch(e) { return "" }
+      })(entry),
+
+      featuredImageUrl: (function(entry) {
+        for (var i in entry.content.match(/(<img.*?>)/gi)) {
+          if( entry.content.match(/(<img.*?>)/gi)[i].indexOf("featured") >0 ) {
+           try { return entry.content.match(/(<img.*?>)/gi)[i].match(/src="(.*?)"/)[1] }
+           catch(e) { return "" }
+          }
+          else {
+            try{ return entry.content.match(/(<img.*?>)/gi)[0].match(/src="(.*?)"/)[1]  }
+            catch(e) { return "" }           
+            }
+        }
+      })(entry),
+
+      featuredImageAlt: (function(entry) {
+        for (var i in entry.content.match(/(<img.*?>)/gi)) {
+          if( entry.content.match(/(<img.*?>)/gi)[i].indexOf("featured") >0 ) {
+           try { return entry.content.match(/(<img.*?>)/gi)[i].match(/alt="(.*?)"/)[1] }
+           catch(e) { return "" }
+          }
+          else {
+            try{ return entry.content.match(/(<img.*?>)/gi)[0].match(/alt="(.*?)"/)[1]  }
+            catch(e) { return "" }           
+            }
+        }
+      })(entry)
+    }, this.options.tokens)
+  }
+
+  RSS.prototype.getValueForToken = function(_token, entry) {
+    var tokenMap = this.getTokenMap(entry)
+      , token    = _token.replace(/[\{\}]/g, '')
+      , result   = tokenMap[token]
+
+    if(typeof result != 'undefined')
+      return ((typeof result == 'function') ? result(entry, tokenMap) : result)
+    else
+      throw new Error('Unknown token: ' + _token)
+  }
+
+  $.fn.rss = function(url, options, callback) {
+    new RSS(this, url, options, callback).render()
+    return this; //implement chaining
+  }
+
+})(jQuery)

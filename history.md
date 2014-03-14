@@ -1,3 +1,59 @@
+# v3.0.2 (March 14, 2014)
+
+## Apple Touch Icons
+애플 터치 아이콘 사이즈 수정과 MS 아이콘 추가. 
+
+> apple-touch-icon overview - http://mathiasbynens.be/notes/touch-icons 
+
+* `57×57px` – non-Retina iPhone and iPod Touch
+* `72×72px` – iPad mini and the first- and second-generation iPad on iOS ≤ 6
+* `76×76px` – iPad mini and the first- and second-generation iPad on iOS ≥ 7
+* `114×114px` – iPhone 4+ (with Retina Display) on iOS ≤ 6
+* `120×120px` – iPhone 4+ (with Retina Display) on iOS ≥ 7
+* `144×144px` – iPad 3+ (with Retina Display)
+* `152×152px` – iPad 3+ (with Retina Display)
+
+> msapplication
+
+* msapplication-114x114
+* msapplication-TileColor : #222222;
+
+## Navigation 
+
+- `nav`에 대한 모든 코드를 간결하고 읽고 쓰기 쉽게 수정 & 정리
+- 커스터마이징 확장성을 위해 테블릿 이하 디자인 변경
+- 자바스크립트를 변경했으며 디자인은 purescss.io와 동일
+
+## RSS 피드 최신글 목록 
+최신글 목록 레퍼런스는 업데이트 후 제공할 것입니다.  
+
+- 날짜 포함. 자바스크립트에서 {kdate} 
+- 주요 이미지 선택 가능. 자바스크립트에서 {featuredImageUrl} 
+- 주요 이미지를 작성 하지 않으면 자동으로 기존의 방식과 마찬가지로 포스팅의 첫 번째 이미지가 출력
+
+> 포스팅에서 이미지 태그에 alt="이미지 설명, featured입니다"와 같이 사용할 수 있습니다. alt=""는 이미지 태그에 반드시 작성할 것을 권합니다. 티스토리 에디터에서 이미지를 삽입하면 전역태그로 변환되기에 주요 이미지는 <img src="...jpg" alt="... featured">처럼 HTML 작성이 필요합니다. 
+
+## CSS
+
+- `.skeleton-nav`, `.skeleton-header`, `skeleton-footer` 등 오류 CSS 수정 thx [5penwater님](http://5penwater.com/)
+- `.skeleton-nav` 서브메뉴 1픽셀 중복 오류 수정
+- `.skeleton-nav`  Doo Be Doo의 경우 IE7의 z-index 핵 자바스크립트는 nav에만 적용 
+- `.mid-banner`와 `.mid-search`는 각각 `.mid-content`와 `.mid-aside`로 클래스명이 변경 
+- `<section>`의 의미 없는 id를 클래스로 변경
+- `.widget` 관련 CSS 정리
+
+## HTML 
+
+- `nav`는 `header` 안에 포함
+- 레이아웃과 관련된 요소는 HTML5 태그 내에서 적용되도록 수정 
+
+### 구글 애드센스(반응형-비동기코드)
+구글 애드센스 적용 방법은 커뮤니티의 쓰레드를 참고하시기 바랍니다. thx [TommyMax님](http://tommymax.co.kr), [EagleK님](http://pobl.net/)
+> http://community.markquery.com/?p=75
+
+### 커뮤니티에 대해서 
+커뮤니티는 게시판에서 포럼 프로그램으로 변경했습니다. 기존의 게시판에 많은 자료가 쌓여있으니 삭제하지는 않을 것입니다. 단 기존의 코드들은 업데이트에 따라 적용되지 않을 수 있으니 주의가 필요합니다. 게시판에서는 로그인 없이 운영 했으나, 각종 스팸에 대한 처리가 필요했습니다. 새로운 커뮤니티 프로그램에서는 부득이하게 로그인을 하게 되었습니다. 또한 포럼에서는 쓰레드를 이어갈 수 있습니다. 질문/답변의 코드 중복이 없는 커뮤니티 운영을 부탁드립니다.  
+
 # v3.0.1 (March 6, 2014)
 
 - `Hotfix` 사이드바 태그 목록 오류 수정 form Nightowlkr 밤샌부엉이님 

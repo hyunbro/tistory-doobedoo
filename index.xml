@@ -2,7 +2,7 @@
 <skin>
 	<information>
 		<name>마크쿼리 skeleton - Doo Be Doo</name>
-		<version>3.0.1</version>
+		<version>3.0.2</version>
 		<description>
 			<![CDATA[마크쿼리 skeleton - Doo Be Doo]]>
 		</description>
@@ -10,7 +10,7 @@
 			<![CDATA[http://markquery.github.io/license]]>
 		</license>
 		<tags>
-			<tag>마크쿼리</tag> <tag>markquery</tag> <tag>콘텐츠 편집디자인</tag> <tag>HTML5</tag> <tag>CSS3</tag> <tag>bootstrap</tag>
+			<tag>마크쿼리</tag> <tag>markquery</tag> <tag>콘텐츠 편집디자인</tag> <tag>HTML5</tag> <tag>CSS3</tag>
 		</tags>
 	</information>
 <author>

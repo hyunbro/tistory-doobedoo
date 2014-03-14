@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           'images/app.js': [
             'src/scripts/bootstrap/transition.js',
             'src/scripts/bootstrap/alert.js',
-            'src/scripts/bootstrap/button.js',
+//            'src/scripts/bootstrap/button.js',
 //            'src/scripts/bootstrap/carousel.js',
 //            'src/scripts/bootstrap/collapse.js',
             'src/scripts/bootstrap/dropdown.js',
