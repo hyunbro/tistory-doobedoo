@@ -766,7 +766,7 @@ max-width: 100% !important;
   body [class*="height"] {
     height: auto;
   } 
-  .skeleton-mid-banner { padding: 0 15px; }
+  .skeleton-mid-banner { padding: 50px 15px 0; }
   .mid-banner {
     border:none;
   }
