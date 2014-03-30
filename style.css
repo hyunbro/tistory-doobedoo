@@ -751,9 +751,9 @@ max-width: 100% !important;
   border-bottom:1px dotted #999;
 }
 
-/* Tablet
+/* Small devices < 768px
 ------------------------- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* Remove any padding from the body */
   /*body { padding: 0; }*/
 
