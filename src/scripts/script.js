@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    $("[href^=#]").click(function(e) {
+    $("a[href=#]").click(function(e) {
       return e.preventDefault();
     });
     $(window).scroll(function() {
