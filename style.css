@@ -727,6 +727,10 @@ max-width: 100% !important;
 .tt-span-11,
 .tt-span-12 { width:100% !important; }
 }
+sup.footnote { 
+position:static;
+vertical-align:super;
+}
 .moreless_fold {
   padding-left: 10px; 
   background: url(./images/btn_more.gif) no-repeat 0 50%; 
