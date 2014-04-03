@@ -89,7 +89,7 @@ body {
   background:#eee;
   text-decoration:none;
 }
-..nav ul li ul {
+.nav ul li ul {
   position:absolute;
   left:-9999em;
   z-index:1030;
