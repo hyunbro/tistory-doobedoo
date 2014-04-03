@@ -1,6 +1,6 @@
 # Tistory - Doo Be Doo
 
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Build Status](https://travis-ci.org/markquery/tistory-doobedoo.png)](https://travis-ci.org/markquery/tistory-doobedoo) [![devDependency Status](https://david-dm.org/markquery/tistory-spidersweb/dev-status.png?theme=shields.io)](https://david-dm.org/markquery/tistory-doobedoo#info=devDependencies)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Build Status](https://travis-ci.org/markquery/tistory-doobedoo.png)](https://travis-ci.org/markquery/tistory-doobedoo) [![devDependency Status](https://david-dm.org/markquery/tistory-doobedoo/dev-status.png?theme=shields.io)](https://david-dm.org/markquery/tistory-doobedoo#info=devDependencies)
 
 [http://markquery.com](http://markquery.com)
 
