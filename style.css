@@ -176,24 +176,6 @@ body {
 .search-input:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
-.btn-none {
-  color: #fff;
-  background-color: #fff;
-  border: 0 none;
-  text-shadow: none;
-  box-shadow:none;
-  background-image :none;
-}
-.btn-none:hover,
-.btn-none:focus,
-.btn-none:active {
-  color: #fff;
-  background-color: #fff;
-  border: 0 none;
-  text-shadow: none;
-  box-shadow:none;
-  background-image :none;
-}
 
 /* Content use the hNews microformat. (http://microformats.org/wiki/hnews)
 -------------------------------------------------- */
@@ -526,6 +508,24 @@ figcaption {
   font-size:10px;
   color:#999;
   opacity: 0.7;
+}
+.btn-none {
+  color: #fff;
+  background-color: #fff;
+  border: 0 none;
+  text-shadow: none;
+  box-shadow:none;
+  background-image :none;
+}
+.btn-none:hover,
+.btn-none:focus,
+.btn-none:active {
+  color: #fff;
+  background-color: #fff;
+  border: 0 none;
+  text-shadow: none;
+  box-shadow:none;
+  background-image :none;
 }
 .list-inline li {
   *display:inline;
