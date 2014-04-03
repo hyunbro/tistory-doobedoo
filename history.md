@@ -41,6 +41,7 @@ css:
 ```
 
 * `.mid-content`에 line-height:2  추가하고 `.social-group`는 삭제합니다. 
+* `.mid-aside`에 검색창을 100%로 변경하고 bootstrap의 input-groups를 사용합니다.
 * `.btn-mq`를 `.btn-none`로 변경합니다. 
 * `.skeleton-aside` 오타를 수정합니다. thx success님 
 * font-family는 `나눔고딕`을 기본으로 변경하고, 애플 유저가 나눔고딕이 없을 시에는 `애플 SD 고딕 Neo`으로 설정. 두 글꼴이 모두 없을 경우에는 `돋움`으로 설정합니다.
