@@ -96,6 +96,13 @@ vertical-align:super;
 
 * `/dist` 폴더에 bootstrap의 모든 자바스크립트를 포함하고 있는 파일명 app.js로 변경합니다. 
 
+## npm 업데이트
+[jshint](https://www.npmjs.org/package/grunt-contrib-jshint), [watch](https://www.npmjs.org/package/grunt-contrib-watch), [less](https://www.npmjs.org/package/grunt-contrib-less)가 업데이트 되었습니다. 
+
+> "grunt-contrib-jshint": "~0.10.0",
+> "grunt-contrib-watch": "~0.6.1",
+> "grunt-contrib-less": "~0.11.0"
+
 # v3.0.3 (March 14, 2014)
 alt 속성 수정
 
