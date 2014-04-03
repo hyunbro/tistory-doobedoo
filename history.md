@@ -1,3 +1,100 @@
+# v3.0.4 (April 1, 2014)
+
+## bootstrap 
+유저의 커스터마이징 편의를 위해 프레임워크 bootstrap의 의존도를 낮추는 작업이 계속 진행되었습니다. 이 과정에서 style.css 파일의 코드는 다소 늘어났지만, 전체 CSS의 용량은 매우 많이 줄어들었습니다. bootstrap의 모든 CSS와 JavaScript의 기능을 추가할 유저는 /dist 폴더의 bootstrap.css와 app.js 파일을 사용하시면 됩니다. 하지만 모든 기능을 사용하지 않는다면 불필요한 코드까지 방문자들에게 로딩을 하게 만듭니다. 사용하고자 하는 기능만 추가하기를 권해드리며, [grunt](http://markquery.com/docs/installing-git-and-nodejs-and-grunt/)를 실행하시기 바랍니다.   
+
+### less
+bootstrap.less에서 mid-search에 쓰기 위해 input-groups를 추가하며 , button-groups와 list-group의 CSS는 더이상 사용하지 않습니다. 
+
+* `@import "component-animations.less";` 추가 
+* `@import "input-groups.less";` 추가
+* `@import "button-groups.less";` 제외 
+* `@import "list-group.less";` 제외 
+
+## skeleton 
+
+* Doo Be Doo는 게시트북 페이지와 개별 포스팅 댓글 부분에 container로 감싸주어 가운데 정렬합니다. 
+
+## CSS
+
+* 스켈레톤의 모바일을 위한 미디어쿼리 768px에서 767px로 수정합니다. 아이패드 스크린 사이즈는 데스크탑 스크린 사이즈와 동일하게 표현됩니다. thx 5penwater님 
+
+> @media screen and (max-width: 767px) { }
+
+* 모바일에서 nav와 header 겹치는 오류 수정합니다. 
+
+> .skeleton-mid-banner { padding: 50px 15px 0; }
+
+* 내비게이션 서브메뉴의 `display:none`을 `left: -9999em`으로 수정합니다. 마우스오버 시 `left: auto`가 되며 자바스크립트를 지원하지 않는 브라우저 또는 스크린리더에서도 키보드 제어가 가능합니다.
+
+css: 
+
+``` css
+..nav ul li ul {
+  position:absolute;
+  left:-9999em;
+  z-index:1030;
+}
+.nav ul li:hover ul {
+  left:auto;
+}
+```
+
+* `.mid-content`에 line-height:2  추가하고 `.social-group`는 삭제합니다. 
+* `.btn-mq`를 `.btn-none`로 변경합니다. 
+* `.skeleton-aside` 오타를 수정합니다. thx success님 
+* font-family는 `나눔고딕`을 기본으로 변경하고, 애플 유저가 나눔고딕이 없을 시에는 `애플 SD 고딕 Neo`으로 설정. 두 글꼴이 모두 없을 경우에는 `돋움`으로 설정합니다.
+
+> @font-family-korean: "나눔고딕", NanumGothic, 'Apple SD Gothic Neo', "돋움", dotum, Arial, sans-serif;
+
+* `.svgicon`에 text-indent: -9999px; 추가합니다. HTML에서 아이콘의 span 태그에 의미에 맞는 텍스트를 입력합니다. 
+
+HTML example:
+
+``` html
+&lt;span class="facebook-icon svgicon"&gt;페이스북 공유 버튼&lt;/span&gt;
+```
+
+* `.social-svgicon` 선택자를 삭제하고, `.svgicon`으로 통합합니다. 
+* 사이트 top으로 가기 버튼의 `.scrollup`은 모든 디바이스에서 출력합니다. 미디어쿼리 767px 이하에서는 bottom: 40px; right: 0; 값을 설정합니다.  
+* bootstrap의 `.list-inline`는 IE7을 지원합니다. 
+
+css: 
+
+``` css
+.list-inline li {
+  *display:inline;
+  *zoom:1;  
+}
+```
+
+## HTML
+* 소셜 글보내기 버튼 IE9 이하 오류를 수정합니다. HTML에서 페이스북 글보내기 버튼의 경우 `facebook-share-dialog`를 `facebooksharedialog`처럼 줄표(dash)를 삭제합니다. 트위터와 구글플러스 버튼도 마찬가지입니다. thx 쫄이님 
+* mid-banner 부분 HTML 수정 및 ARIA 추가합니다. 
+* write 글쓰기 버튼 추가합니다. thx songjeyoon님
+* 글꼴 변환에 `나눔바른고딕` 추가. 영어를 위한 글꼴 변환은 제외하며, 기존의 코드는 /test 폴더에 포함해 둡니다.
+
+## script 
+* 티스토리 에디터의 각주 기능을 사용할 수 있습니다. 의미 없는 앵커 사용 방지를 위한 스크립트를 수정합니다. thx bluenlive님 
+
+JavaScript:
+
+``` javascript
+// 콘텐츠 본문에만 사용됩니다
+$(".entry-content [href=#]").click(function(e) {
+```
+
+css:
+
+``` css
+sup.footnote { 
+position:static;
+vertical-align:super;
+} 
+```
+
+* `/dist` 폴더에 bootstrap의 모든 자바스크립트를 포함하고 있는 파일명 app.js로 변경합니다. 
+
 # v3.0.3 (March 14, 2014)
 alt 속성 수정
 
