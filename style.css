@@ -89,16 +89,16 @@ body {
   background:#eee;
   text-decoration:none;
 }
-.nav ul li:hover ul {
-  display:block;
-}
-.nav ul li ul {
+..nav ul li ul {
   position:absolute;
   left:-9999em;
   z-index:1030;
 }
-.nav ul li ul li  {
+.nav ul li:hover ul {
   left:auto;
+}
+.nav ul li ul li  {
+  display:block;
 }
 .nav ul li ul li a {
   display:block;
