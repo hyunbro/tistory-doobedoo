@@ -40,22 +40,28 @@
 	<a href="#menu" id="menuLink" class="menu-link"><span></span></a>
 
 <header role="banner" class="container-fluid skeleton-nav">
-	<nav id="menu" class="nav" role="navigation">
+	<nav id="menu" class="nav" role="navigation" aria-label="Main menu">
 		<a rel="home" href="[##_blog_link_##]" class="nav-brand">[##_title_##]</a>
-		<ul>
-		<li><a href="/category">category</a>
-			<ul >
-			<li><a href="/category/book">book</a></li>
-			<li><a href="/category/movie">movie</a></li>
-			<li><a href="/category/music">music</a></li>
-			<li><a href="/category/else">else</a></li>
+		<ul role="menubar">
+		<li role="menuitem"><a href="/category">category</a>
+			<ul role="menu" aria-labelledby="dropdown1">
+			<li role="presentation"><a role="menuitem" href="/category/book">book</a></li>
+			<li role="presentation"><a role="menuitem" href="/category/movie">movie</a></li>
+			<li role="presentation"><a role="menuitem" href="/category/music">music</a></li>
+			<li role="presentation"><a role="menuitem" href="/category/else">else</a></li>
 			</ul>
 		</li>
-		<li><a href="/tag">Tags</a></li>
-		<li><a href="/guestbook">Guestbook</a></li>
-		<li><a href="/location">location</a></li>
+		<li role="menuitem"><a href="/tag">Tags</a>
+			<ul role="menu" aria-labelledby="dropdown2">
+			<li role="presentation"><a role="menuitem" href="/category/book">book</a></li>
+			<li role="presentation"><a role="menuitem" href="/category/movie">movie</a></li>
+			<li role="presentation"><a role="menuitem" href="/category/music">music</a></li>
+			<li role="presentation"><a role="menuitem" href="/category/else">else</a></li>
+			</ul>
+		</li>
+		<li role="menuitem"><a href="/guestbook">Guestbook</a></li>
+		<li role="menuitem"><a href="/location">location</a></li>
 		</ul>
-	</nav>
 </header><!-- /.container-fluid skeleton-nav -->
 
 <section class="container-fluid skeleton-header">
@@ -89,7 +95,7 @@
 			<ul class="list-inline">
 				<li>
 				<div class="dropdown">
-				<button class="dropdown-toggle btn btn-mq btn-xs" type="button" role="menu" aria-labelledby="dropdownmenu" data-toggle="dropdown"><span class="font-icon svgicon">dropdown menu</span></button>
+				<button class="dropdown-toggle btn btn-mq btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown"><span class="font-icon svgicon">dropdown menu</span></button>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('나눔바른고딕, NanumBarunGothic, sans-serif');">나눔바른고딕</a></li>
 						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
@@ -98,7 +104,7 @@
 						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('굴림, Gulim, sans-serif');">굴림</a></li>
 						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('돋움, dotum, sans-serif');">돋움</a></li>
 						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('바탕, Batang, sans-serif');">바탕</a></li>
-						<li class="divider"></li>
+						<li role="presentation" class="divider"></li>
 						<li role="presentation"><a role="menuitem" href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <span class="help-icon svgicon">web safe font 알아보기</span></a></li>
 					</ul>
 				</div><!-- dropdown -->
