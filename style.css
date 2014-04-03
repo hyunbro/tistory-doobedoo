@@ -156,25 +156,19 @@ body {
 .mid-content {
   min-height:50px;
   padding:20px;
+  line-height:2;
   border-right:1px solid #ccc;
 }
 .mid-aside {
   min-height:50px;
-  padding:25px 20px 0;
+  padding:20px 20px 0;
 }
 .search-input {
-  max-width: 100px;
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
+  width:100%;
   outline: none;
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border-top: none;
-  border-left: none;
-  border-right:none;
-  border-bottom: 1px solid #DDDDDD;
+  padding: 3px 10px;
+  margin: 5px;
+  border: none;
   -webkit-border-radius: 0; 
   -moz-border-radius: 0; 
   border-radius: 0; 
@@ -182,7 +176,7 @@ body {
 .search-input:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
-.btn-mq {
+.btn-none {
   color: #fff;
   background-color: #fff;
   border: 0 none;
@@ -190,10 +184,10 @@ body {
   box-shadow:none;
   background-image :none;
 }
-.btn-mq:hover,
-.btn-mq:focus,
-.btn-mq:active,
-.btn-mq.active {
+.btn-none:hover,
+.btn-none:focus,
+.btn-none:active,
+.btn-none.active {
   color: #fff;
   background-color: #fff;
   border: 0 none;
@@ -591,26 +585,7 @@ video { max-width:100%; height: auto; }
   -khtml-opacity: 0.5;
   opacity: 0.5;
   background-color:#fff\9; /* for IE7,IE8 */
-}
-.social-svgicon { 
-  position: relative;
-  display: inline-block;
-  *display:inline;
-  *zoom:1;
-  vertical-align: middle;
-  max-height: 100%;
-  height:25px;
-  width:25px;
-  background-size:25px;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  opacity: 0.5;
-    background-color:#fff\9; /* for IE7,IE8 */
-}
-.social-group { 
-  line-height:3;
+  text-indent: -9999px;
 }
 .social-link ul {
   margin: 0;
@@ -786,7 +761,8 @@ vertical-align:super;
     text-align:center;
   }
   .scrollup {
-    display:none !important;
+    bottom: 40px;
+    right: 0;
   }
   .responsive-right2left {
     float:left;
@@ -943,12 +919,3 @@ vertical-align:super;
       right: none;
   }
 }
-
-@media screen and (max-width: 992px) { 
-  /* utility */
-  .scrollup {
-    display:none !important;
-  }
-}
-
-@media (min-width: 1200px) { }
