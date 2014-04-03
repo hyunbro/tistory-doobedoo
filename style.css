@@ -604,14 +604,14 @@ video { max-width:100%; height: auto; }
   *zoom: 1;
 }
 .social-link a {
- padding:10px 10px 13px;
- text-decoration:none;
- border:none;
+  padding:5px 10px 8px;
+  text-decoration:none;
+  border:none;
 }
 .social-link a:hover {
- padding:10px 10px 13px;
- text-decoration:none;
- border:none;
+  padding:5px 10px 8px;
+  text-decoration:none;
+  border:none;
 }
 a.facebook-link {  background-color:#3B5998; }
 a.twitter-link { background-color:#00ACED; }
