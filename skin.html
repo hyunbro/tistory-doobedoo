@@ -86,23 +86,27 @@
 		</div><!-- /.col-8 -->
 		<div class="col-sm-4">
 			<div class="responsive-right2left">
-				<div class="btn-group">
-					<button type="button" class="dropdown-toggle btn-mq btn-xs" data-toggle="dropdown"><span class="font-icon svgicon"></span></button>
-						<ul class="dropdown-menu">
-						<li><a href="javascript:changeFontFamily('나눔바른고딕, NanumBarunGothic, sans-serif');">나눔바른고딕</a></li>
-						<li><a href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
-						<li><a href="javascript:changeFontFamily('맑은 고딕, Malgun Gothic, sans-serif');">맑은고딕</a></li>
-						<li><a href="javascript:changeFontFamily('다음_Regular, daum_Regular, sans-serif');">다음</a></li>
-						<li><a href="javascript:changeFontFamily('굴림, Gulim, sans-serif');">굴림</a></li>
-						<li><a href="javascript:changeFontFamily('돋움, dotum, sans-serif');">돋움</a></li>
-						<li><a href="javascript:changeFontFamily('바탕, Batang, sans-serif');">바탕</a></li>
+			<ul class="list-inline">
+				<li>
+				<div class="dropdown">
+				<button class="dropdown-toggle btn btn-mq btn-xs" type="button" role="menu" aria-labelledby="dropdownmenu" data-toggle="dropdown"><span class="font-icon svgicon">dropdown menu</span></button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('나눔바른고딕, NanumBarunGothic, sans-serif');">나눔바른고딕</a></li>
+						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('나눔고딕, NanumGothic, sans-serif');">나눔고딕</a></li>
+						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('맑은 고딕, Malgun Gothic, sans-serif');">맑은고딕</a></li>
+						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('다음_Regular, daum_Regular, sans-serif');">다음</a></li>
+						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('굴림, Gulim, sans-serif');">굴림</a></li>
+						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('돋움, dotum, sans-serif');">돋움</a></li>
+						<li role="presentation"><a role="menuitem" href="javascript:changeFontFamily('바탕, Batang, sans-serif');">바탕</a></li>
 						<li class="divider"></li>
-						<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank"><small>Web Safe Font</small> <span class="help-icon svgicon"></span></a></li>
-						</ul>
-					<button type="button" class="jfontsize-p btn-mq btn-xs"><span class="plus-icon svgicon"></span></button>
-					<button type="button" class="jfontsize-m btn-mq btn-xs"><span class="minus-icon svgicon"></span></button>
-					<button type="button" class="btn-mq btn-xs" onclick="btnPrint()"><span class="print-icon svgicon"></span></button>
-				</div><!-- /.btn-group -->
+						<li><a href="http://markquery.com/docs/web-safe-font/" target="_blank" tabindex="-1"><small>Web Safe Font</small> <span class="help-icon svgicon">web safe font 알아보기 링크</span></a></li>
+					</ul>
+				</div><!-- dropdown -->
+				</li>
+				<li><button class="jfontsize-p btn btn-mq btn-xs" type="button"><span class="plus-icon svgicon">본문 텍스트 확대</span></button></li>
+				<li><button class="jfontsize-m btn btn-mq btn-xs" type="button"><span class="minus-icon svgicon">본문 텍스트 축소 </span></button></li>
+				<li><button class="btn btn-mq btn-xs" type="button" onclick="btnPrint()"><span class="print-icon svgicon">인쇄</span></button></li>
+			</ul>
 			</div><!-- /.responsive-right2left -->
 		</div><!-- /.col-4 -->
 	</div><!-- /.row row -->
