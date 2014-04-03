@@ -53,7 +53,7 @@ css:
 HTML example:
 
 ``` html
-&lt;span class="facebook-icon svgicon"&gt;페이스북 공유 버튼&lt;/span&gt;
+<span class="facebook-icon svgicon">페이스북 공유 버튼</span>
 ```
 
 * `.social-svgicon` 선택자를 삭제하고, `.svgicon`으로 통합합니다. 
