@@ -186,8 +186,7 @@ body {
 }
 .btn-none:hover,
 .btn-none:focus,
-.btn-none:active,
-.btn-none.active {
+.btn-none:active {
   color: #fff;
   background-color: #fff;
   border: 0 none;
