@@ -94,11 +94,11 @@ body {
 }
 .nav ul li ul {
   position:absolute;
-  display:none;
+  left:-9999em;
   z-index:1030;
 }
 .nav ul li ul li  {
-  display:block;
+  left:auto;
 }
 .nav ul li ul li a {
   display:block;
