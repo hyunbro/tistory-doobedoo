@@ -1,6 +1,6 @@
 {
   "name": "tistory-doobedoo",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": "Ungki.H <ungki.h@gmail.com>",
   "homepage": "http://markquery.com",
   "repository": {
@@ -16,6 +16,9 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
+  "scripts": {
+    "test": "grunt test"
+  },
   "engines": {
     "node": ">= 0.10.24"
   },
