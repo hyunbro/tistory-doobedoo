@@ -10,12 +10,10 @@
   "bugs": {
     "url": "http://markquery.com"
   },
-  "licenses": [
-    {
+  "licenses": {
       "type": "MIT",
       "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
+    },
   "scripts": {
     "test": "grunt test"
   },

@@ -87,5 +87,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.registerTask('default', ['clean','less','uglify']);
+  grunt.registerTask('test', ["clean", "less", "uglify"]);
   grunt.registerTask('dev', ['watch']);
 };
