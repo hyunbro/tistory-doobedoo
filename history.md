@@ -226,7 +226,7 @@ max-width: 100% !important;
 
 ### Javascript for IE
 
-* `ie-row-fix.js` 파일을 `/scripts` 폴더에 추가합니다. thx [sixfootsixdesigns](https://github.com/sixfootsixdesigns)
+* `ie-row-fix.js` 파일을 `/images` 폴더에 추가합니다. thx [sixfootsixdesigns](https://github.com/sixfootsixdesigns)
 
 ### HTML 유저 선택
 
