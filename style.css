@@ -870,7 +870,7 @@ vertical-align:super;
     left: 0; 
     background: #474343;
     font-size: 11px; 
-    z-index: 10;
+    z-index: 1000;
     width: 4em;
     height: 4em;
     padding: 1em;
