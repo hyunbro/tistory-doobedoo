@@ -394,7 +394,8 @@ border-left-width: 0;
   background-color: #10a4ff;      
 }
 .widget-inner ul ul ul {text-indent:10px;}
-.widget-inner li li li a:before {  content:"›"; padding-right:10px;}
+.widget-inner li li li a {font-size:10px;} 
+.widget-inner li li li a:before {content:"\003e"; padding-right:10px;} 
 .widget-inner .cnt {
   color: #999;
   font-size:12px;
