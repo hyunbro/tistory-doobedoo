@@ -423,7 +423,7 @@ border-left-width: 0;
 -------------------------------------------------- */
 .widget-feed li {
   border-bottom: 1px solid #eee;
-  min-height:60px;
+  min-height:80px;
 }
 .widget-feed .media-body {
   overflow:visible !important;
