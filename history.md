@@ -1,3 +1,241 @@
+# v3.0.5 (April 26, 2014)
+티스토리의 메인 페이지를 꾸미는 티에디션이 이번 버전부터 완벽하게 반응형웹 디자인이 됩니다. 티스토리의 기능은 살아있습니다. 단 유저가 썸네일 크기를 각각 다르게 사용할 때 레이아웃이 깨지는 것을 방지하기 위해 `ie-row-fix.js`가 추가됩니다.  반응형 티에디션 코드는 마크쿼리의 skin.html에 포함되는 것이 아니며 `/test` 폴더의 개별 문서로 제공합니다. 유저가 원하는 형태를 선택할 수 있습니다. 크게는 썸네일과 텍스트를 동일하게 가로로 나열하는 방법과 썸네일은 왼쪽에 텍스트는 오른쪽으로 나열하는 두 가지 방법이 있습니다. 
+
+> 티에디션을 사용할 경우 html/css를 수정하면 사이즈가 초기화 됩니다. html/css 수정 시에는 화면설정 -> 해제하기를 선택하고, 수정 완료 후 사용하기를 선택하면서 마크쿼리를 활용하시기 바랍니다.  
+> 티에디션 각 항목의 타이틀 기능은 사용하지 않고, style.css의 `.tiedtion-title h1 { ... }으로 대체됩니다. 또한 썸네일 자르기 기능은 제공하지 않습니다. 
+
+## 최신글 목록 rss 주소 수정 
+썸네일 지원 최신글 목록을 위한 rss 주소는 `http://도메인/rss/xml`입니다.  최신글이 나타나지 않거나 딜레이가 되는 부분이 해결될 것입니다. 
+
+``` javascript 
+$(".widget-feed").rss("http://도메인/rss/xml", {
+```
+## script 
+
+* 1. 티스토리 에디터의 각주 사용을 위해 수정했던 코드를 다시 `a[href=#]`로 수정합니다. https://github.com/markquery/tistory-doobedoo/issues/7 thx [bluenlive](https://github.com/bluenlive)님
+* 2. .entry-content 내부에만 적용하던 것을 삭제합니다.  
+
+``` javascript
+$("a[href=#]").click(function(e) {
+```
+
+## HTML
+
+* footer의 `write`를 대문자로 수정합니다. thx [sms200207](https://github.com/sms200207)
+
+## CSS
+* 내비게이션 메뉴의 모바일에서 펼침 버튼이 이미지 밑으로 내려앉는 오류 수정합니다. 
+
+``` css
+   .menu-link {
+   ... 
+    z-index: 1000;
+  }
+```
+
+* .scrollup의 모바일에서 버튼이 터치되지 않는 오류 수정합니다. thx 미도님
+
+``` css
+  .scrollup {
+  ...
+  z-index: 1000;
+  }
+```
+
+* 서브 카테고리를 좀더 구별하기 쉽도록 글꼴 크기를 작게 합니다. `font-size: 10px`를 추가하며, `content:"\003e";`로 변경합니다. 
+
+``` css
+.widget-inner li li li a {font-size:10px;} /* 추가 */
+.widget-inner li li li a:before {content:"\003e"; padding-right:10px;} /* 수정 */
+```
+
+* 최신글 목록의 높이 간격을 60px에서 80px로 수정합니다.
+
+``` css
+.widget-feed li { min-height: 80px; }
+```
+
+## 티에디션
+
+### style.css 
+
+* style.css에서 다음의 코드를 삭제합니다. 
+
+``` css
+body.tistory_grid_350 div#ttCanvas,
+body.tistory_grid_385 div#ttCanvas,
+body.tistory_grid_420 div#ttCanvas,
+body.tistory_grid_455 div#ttCanvas,
+body.tistory_grid_490 div#ttCanvas,
+body.tistory_grid_525 div#ttCanvas,
+body.tistory_grid_560 div#ttCanvas,
+body.tistory_grid_595 div#ttCanvas,
+body.tistory_grid_630 div#ttCanvas,
+body.tistory_grid_665 div#ttCanvas,
+body.tistory_grid_700 div#ttCanvas,
+body.tistory_grid_735 div#ttCanvas,
+body.tistory_grid_770 div#ttCanvas,
+body.tistory_grid_805 div#ttCanvas,
+body.tistory_grid_840 div#ttCanvas,
+body.tistory_grid_875 div#ttCanvas,
+body.tistory_grid_910 div#ttCanvas,
+body.tistory_grid_945 div#ttCanvas,
+body.tistory_grid_980 div#ttCanvas,
+body.tistory_grid_1015 div#ttCanvas,
+body.tistory_grid_1050 div#ttCanvas { max-width: 100% !important; }
+.tt-span-1,
+.tt-span-2,
+.tt-span-3,
+.tt-span-4,
+.tt-span-5,
+.tt-span-6,
+.tt-span-7,
+.tt-span-8,
+.tt-span-9,
+.tt-span-10,
+.tt-span-11,
+.tt-span-12 {
+max-width: 100% !important;
+}
+@media screen and (max-width: 1200px) {
+.tt-span-1,
+.tt-span-2,
+.tt-span-3,
+.tt-span-4,
+.tt-span-5,
+.tt-span-6,
+.tt-span-7,
+.tt-span-8,
+.tt-span-9,
+.tt-span-10,
+.tt-span-11,
+.tt-span-12 { width:100% !important; }
+}
+```
+
+* style.css에 앞서 삭제한 코드 대신에 다음의 코드로 수정합니다. 티에디션에서 margin, padding 여백 속성을 강제로 지우는 코드가 있기 때문에 강제로 각 행(col)에 여백이 필요합니다. 또한 선택자에 margin과 padding의 문자열이 있을 경우에는 767px 이하 스크린부터 0px의 값으로 여백을 없애버립니다. 모바일에서 여백 없이 표현되는 티에디션에서 적용됩니다. 이는 마크쿼리 초기 버전부터 포함되어 있는 코드에 의해 유지됩니다. 
+
+``` css
+/* Tiedition  
+   ------------------------------------------------ */
+#ttCanvas { max-width: 100% !important; }
+.tiedtion-title h2 {
+  margin: 30px 0!important;
+  padding: 10px 0!important;
+  font-size: 16px!important;
+  font-family: inherit!important;
+  border-bottom:1px solid #ccc!important;
+} 
+.tt-post-title {
+  font-weight: bold !important;
+  letter-spacing: normal!important;
+  font-size: 14px !important;
+  text-align: left !important;
+  margin: 5px 0!important;
+  padding: 5px 0!important;  
+}
+.tt-post-summary {
+  text-align: justify !important;
+  font: inherit !important;
+}
+.tt-post-etcinfo {
+  font: inherit !important;
+  letter-spacing: normal!important;
+  text-align: left !important;
+}
+.tt-post-etcinfo * {
+  white-space:initial!important;
+}
+.tt-post-etcinfo p {
+  font-size:8px!important;
+  margin: 5px 0 20px!important;
+}
+.tt-post-category, 
+.tt-post-author,
+.tt-post-date,
+.tt-post-comment { 
+  font: inherit !important;
+  letter-spacing: normal!important;
+  line-height: 1.8!important;
+}
+.tiedtion-margin { /* Remove margin form small devices < 768px */
+  margin-right: -15px !important;
+  margin-left: -15px !important;
+}
+.tiedtion-padding { /* Remove padding form small devices < 768px */
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  *padding-right: 7.5px !important;
+  *padding-left: 7.5px !important;
+}
+.tiedtion-m { /* Retain margin form small devices < 768px */
+  margin-right: -15px !important;
+  margin-left: -15px !important;
+}
+.tiedtion-p { /* Retain padding form small devices < 768px */
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  *padding-right: 7.5px !important;
+  *padding-left: 7.5px !important;
+}
+.multi-columns-row .first-in-row {
+  clear: left;
+}
+.multi-columns-row .col-xs-6:nth-child(2n + 3) { clear: left; }
+.multi-columns-row .col-xs-4:nth-child(3n + 4) { clear: left; }
+.multi-columns-row .col-xs-3:nth-child(4n + 5) { clear: left; }
+.multi-columns-row .col-xs-2:nth-child(6n + 7) { clear: left; }
+.multi-columns-row .col-xs-1:nth-child(12n + 13) { clear: left; }
+@media (min-width: 768px) {
+  .multi-columns-row .col-xs-6:nth-child(2n + 3) { clear: none; }
+  .multi-columns-row .col-xs-4:nth-child(3n + 4) { clear: none; }
+  .multi-columns-row .col-xs-3:nth-child(4n + 5) { clear: none; }
+  .multi-columns-row .col-xs-2:nth-child(6n + 7) { clear: none; }
+  .multi-columns-row .col-xs-1:nth-child(12n + 13) { clear: none; }
+  .multi-columns-row .col-sm-6:nth-child(2n + 3) { clear: left; }
+  .multi-columns-row .col-sm-4:nth-child(3n + 4) { clear: left; }
+  .multi-columns-row .col-sm-3:nth-child(4n + 5) { clear: left; }
+  .multi-columns-row .col-sm-2:nth-child(6n + 7) { clear: left; }
+  .multi-columns-row .col-sm-1:nth-child(12n + 13) { clear: left; }
+}
+@media (min-width: 992px) {
+  .multi-columns-row .col-sm-6:nth-child(2n + 3) { clear: none; }
+  .multi-columns-row .col-sm-4:nth-child(3n + 4) { clear: none; }
+  .multi-columns-row .col-sm-3:nth-child(4n + 5) { clear: none; }
+  .multi-columns-row .col-sm-2:nth-child(6n + 7) { clear: none; }
+  .multi-columns-row .col-sm-1:nth-child(12n + 13) { clear: none; }
+  .multi-columns-row .col-md-6:nth-child(2n + 3) { clear: left; }
+  .multi-columns-row .col-md-4:nth-child(3n + 4) { clear: left; }
+  .multi-columns-row .col-md-3:nth-child(4n + 5) { clear: left; }
+  .multi-columns-row .col-md-2:nth-child(6n + 7) { clear: left; }
+  .multi-columns-row .col-md-1:nth-child(12n + 13) { clear: left; }
+}
+@media (min-width: 1200px) {
+  .multi-columns-row .col-md-6:nth-child(2n + 3) { clear: none; }
+  .multi-columns-row .col-md-4:nth-child(3n + 4) { clear: none; }
+  .multi-columns-row .col-md-3:nth-child(4n + 5) { clear: none; }
+  .multi-columns-row .col-md-2:nth-child(6n + 7) { clear: none; }
+  .multi-columns-row .col-md-1:nth-child(12n + 13) { clear: none; }
+  .multi-columns-row .col-lg-6:nth-child(2n + 3) { clear: left; }
+  .multi-columns-row .col-lg-4:nth-child(3n + 4) { clear: left; }
+  .multi-columns-row .col-lg-3:nth-child(4n + 5) { clear: left; }
+  .multi-columns-row .col-lg-2:nth-child(6n + 7) { clear: left; }
+  .multi-columns-row .col-lg-1:nth-child(12n + 13) { clear: left; }
+}
+```
+
+### Javascript for IE
+
+* `ie-row-fix.js` 파일을 `/scripts` 폴더에 추가합니다. thx [sixfootsixdesigns](https://github.com/sixfootsixdesigns)
+
+### HTML 유저 선택
+
+* `/test` 폴더에 티에디션을 위한 HTML은 형태에 따라 유저가 선택해서 사용합니다. 함께 있는 CSS 파일은 유저가 직접 style.css에 추가해야 합니다. 
+
+> 메인페이지에서 티에디션을 활성화시키고, 아이탬 탭에서 무엇이든 선택 후, 디자인 탭에서 HTML 버튼을 누르면 HTML을 수정할 수 있습니다. 
+> 아이템 선택은 무엇이든지 가능합니다. 단 항목에 맞는 썸네일 크기를 맞추기 위해서라면, 모든 아이탬을 가능한 썸네일 크기가 큰 아이템으로 선택하는 것이 좋습니다. 
+> 모바일에서 1열로 썸네일이 보이도록 할 경우 썸네일 크기가 작은 아이템은 화면에 작게 표시됩니다. 
+
 # v3.0.4 (April 1, 2014)
 
 ## bootstrap 
