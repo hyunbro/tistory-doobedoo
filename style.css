@@ -719,6 +719,9 @@ max-width: 100%!important;
   margin: 0 0 5px!important;
   padding: 0!important;  
 }
+.tt-post-thumb {
+  padding-bottom: 5px!important;
+}
 .tt-post-summary {
   text-align: justify!important;
   font: inherit!important;
