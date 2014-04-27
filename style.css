@@ -690,6 +690,20 @@ vertical-align:super;
 /* Tiedition  
    ------------------------------------------------ */
 #ttCanvas { max-width: 100% !important; }
+.tt-span-1,
+.tt-span-2,
+.tt-span-3,
+.tt-span-4,
+.tt-span-5,
+.tt-span-6,
+.tt-span-7,
+.tt-span-8,
+.tt-span-9,
+.tt-span-10,
+.tt-span-11,
+.tt-span-12 {
+max-width: 100% !important;
+}
 .tiedtion-title h2 {
   margin: 30px 0!important;
   padding: 10px 0!important;

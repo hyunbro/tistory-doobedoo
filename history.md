@@ -55,6 +55,28 @@ $("a[href=#]").click(function(e) {
 .widget-feed li { min-height: 80px; }
 ```
 
+* Spider's Web의 경우 `.skeleton`, `.skeleton-mid-banner`의 여백을 IE7에서만 표현하도록 수정합니다. 
+
+``` css
+.skeleton {
+  *padding: 0 20px;
+}
+
+.skeleton-mid-banner { 
+  *padding: 0 20px;
+}
+```
+
+* Spider's Web의 경우 `.skeleton-footer`의 미디어쿼리 767px 이하에서 여백을 삭제합니다. 
+
+``` css
+  .skeleton-footer {
+    font-size: 10px;
+    padding: 30px 0; /* 삭제 */
+    text-align:center;
+  }
+```
+
 ## 티에디션
 
 ### style.css 
