@@ -147,30 +147,47 @@ max-width: 100% !important;
 ``` css
 /* Tiedition  
    ------------------------------------------------ */
-#ttCanvas { max-width: 100% !important; }
-.tiedition-title h2 {
-  margin: 30px 0!important;
+#ttCanvas { max-width: 100%!important; }
+.tt-span-1,
+.tt-span-2,
+.tt-span-3,
+.tt-span-4,
+.tt-span-5,
+.tt-span-6,
+.tt-span-7,
+.tt-span-8,
+.tt-span-9,
+.tt-span-10,
+.tt-span-11,
+.tt-span-12 {
+max-width: 100%!important;
+}
+.tiedition-title {
+  margin: 10px 0!important;
   padding: 10px 0!important;
   font-size: 16px!important;
   font-family: inherit!important;
-  border-bottom:1px solid #ccc!important;
+  border-bottom:1px solid #eee!important;
 } 
 .tt-post-title {
-  font-weight: bold !important;
+  font-weight: bold!important;
   letter-spacing: normal!important;
-  font-size: 14px !important;
-  text-align: left !important;
-  margin: 5px 0!important;
-  padding: 5px 0!important;  
+  font-size: 14px!important;
+  text-align: left!important;
+  margin: 0 0 5px!important;
+  padding: 0!important;  
+}
+.tt-post-thumb {
+  padding-bottom: 5px!important;
 }
 .tt-post-summary {
-  text-align: justify !important;
-  font: inherit !important;
+  text-align: justify!important;
+  font: inherit!important;
 }
 .tt-post-etcinfo {
-  font: inherit !important;
+  font: inherit!important;
   letter-spacing: normal!important;
-  text-align: left !important;
+  text-align: left!important;
 }
 .tt-post-etcinfo * {
   white-space:initial!important;
@@ -183,7 +200,7 @@ max-width: 100% !important;
 .tt-post-author,
 .tt-post-date,
 .tt-post-comment { 
-  font: inherit !important;
+  font: inherit!important;
   letter-spacing: normal!important;
   line-height: 1.8!important;
 }
