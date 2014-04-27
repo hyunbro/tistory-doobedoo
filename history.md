@@ -22,6 +22,11 @@ $("a[href=#]").click(function(e) {
 ## HTML
 
 * footer의 `write`를 대문자로 수정합니다. thx [sms200207](https://github.com/sms200207)
+* 메타 태그에서 chrome=1을 삭제합니다. 
+
+``` html
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+```
 
 ## CSS
 * 내비게이션 메뉴의 모바일에서 펼침 버튼이 이미지 밑으로 내려앉는 오류 수정합니다. 
