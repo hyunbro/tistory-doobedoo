@@ -180,26 +180,6 @@ max-width: 100% !important;
   letter-spacing: normal!important;
   line-height: 1.8!important;
 }
-.tiedtion-margin { /* Remove margin form small devices < 768px */
-  margin-right: -15px !important;
-  margin-left: -15px !important;
-}
-.tiedtion-padding { /* Remove padding form small devices < 768px */
-  padding-right: 15px !important;
-  padding-left: 15px !important;
-  *padding-right: 7.5px !important;
-  *padding-left: 7.5px !important;
-}
-.tiedtion-m { /* Retain margin form small devices < 768px */
-  margin-right: -15px !important;
-  margin-left: -15px !important;
-}
-.tiedtion-p { /* Retain padding form small devices < 768px */
-  padding-right: 15px !important;
-  padding-left: 15px !important;
-  *padding-right: 7.5px !important;
-  *padding-left: 7.5px !important;
-}
 .multi-columns-row .first-in-row {
   clear: left;
 }
