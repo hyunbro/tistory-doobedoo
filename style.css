@@ -716,8 +716,8 @@ max-width: 100%!important;
   letter-spacing: normal!important;
   font-size: 14px!important;
   text-align: left!important;
-  margin: 5px 0!important;
-  padding: 5px 0!important;  
+  margin: 0 0 5px!important;
+  padding: 0!important;  
 }
 .tt-post-summary {
   text-align: justify!important;
