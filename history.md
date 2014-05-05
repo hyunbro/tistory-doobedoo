@@ -21,6 +21,12 @@ $("a[href=#]").click(function(e) {
 
 ## HTML
 
+* 마이크로포멧 데이터 구조 중 HTML5의 <time> 태그에 published를 updated로 변경합니다. skin.html에서 `ctrl + f` 명렁어로 모든 `published`를 찾아 `updated`로 변경합니다. publised는 옵셥입니다. 반드시 수정해야하는 사항은 아니지만, 구글 웹마스터도구에서 누락된 `updated` 오류를 해결하기 위해서는 이 변경사항을 적용하시기 바랍니다. 그리고 모든 <time> 태그에 `pubdate`를 추가합니다. thx [블로그인](http://markquery.com/community/7853) 
+
+``` html
+<time class="updated" datetime="티스토리 날짜 치환자" pubdate>
+```
+
 * 파비콘 경로를 수정합니다. `./images`를 삭제합니다. 파비콘 뿐만 아니라 터치 아이콘을 유저의 아이콘으로 수정해서 사용하시기 바랍니다. 
 ``` html
 <link rel="shortcut icon" href="/favicon.ico">
@@ -34,6 +40,12 @@ $("a[href=#]").click(function(e) {
 ```
 
 ## CSS
+* `.updated`를 추가합니다. 
+
+``` css
+.updated { color:#999; }
+```
+
 * 내비게이션 메뉴의 모바일에서 펼침 버튼이 이미지 밑으로 내려앉는 오류 수정합니다. 
 
 ``` css
@@ -86,6 +98,12 @@ $("a[href=#]").click(function(e) {
     text-align:center;
   }
 ```
+
+## 이미지 파일 최적화 
+svg, png 파일 등 이미지 파일을 최적화합니다. thx [sms200207](https://github.com/sms200207)
+
+* https://github.com/markquery/tistory-spidersweb/pull/5
+* https://github.com/markquery/tistory-spidersweb/pull/6
 
 ## 티에디션
 

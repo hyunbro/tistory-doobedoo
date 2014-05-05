@@ -202,6 +202,7 @@ body {
 .entry-content { padding-bottom:40px; }
 .byline { color:#999; }
 .published { color:#999; }
+.updated { color:#999; }
 .related{ border-top:1px solid #eee; }
 .entry-tags {
   margin-top:10px;
