@@ -177,6 +177,14 @@ body {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
 
+/* search list
+-------------------------------------------------- */
+.search-list{
+  margin:20px 0;
+  padding:10px 0;
+  border-bottom:1px solid #ccc;
+}
+
 /* Content use the hNews microformat. (http://microformats.org/wiki/hnews)
 -------------------------------------------------- */
 .main { }
@@ -186,11 +194,6 @@ body {
 }
 .entry-header {
   margin-bottom:20px;
-  padding:10px 0;
-  border-bottom:1px solid #ccc;
-}
-.search-list{
-  margin:20px 0;
   padding:10px 0;
   border-bottom:1px solid #ccc;
 }
@@ -215,6 +218,9 @@ body {
   border-bottom:1px solid #ddd;
   border-top: 3px solid #ddd;
 }
+
+/* actionTrail - comments, trackbacks
+-------------------------------------------------- */
 .actionTrail {
   text-align: left;
   font-family: Georgia,  verdana;
@@ -705,6 +711,20 @@ vertical-align:super;
 .tt-span-12 {
 max-width: 100%!important;
 }
+
+/* Tiedition use the hNews microformat 
+-------------------------------------------------- */
+.tiedition .entry-header { }
+.tiedition .entry-title { }
+.tiedition .entry-summary { }
+.tiedition .entry-content-asset { }
+.tiedition .entry-content { }
+.tiedition .byline { }
+.tiedition .updated { }
+.tiedition .entry-tags { }
+
+/* Tiedition entry
+-------------------------------------------------- */
 .tiedition-title {
   margin: 10px 0!important;
   padding: 10px 0!important;
