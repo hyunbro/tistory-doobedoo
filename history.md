@@ -32,7 +32,7 @@ $("a[href=#]").click(function(e) {
 <link rel="shortcut icon" href="/favicon.ico">
 ```
 
-* 블로거 이름의 티스토리 치환자를 수정합니다. thx 
+* 블로거 이름의 티스토리 치환자를 수정합니다. thx DivaGuskA
 
 ``` html
 <span class="fn">[##_article_rep_author_##]</span>
