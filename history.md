@@ -189,9 +189,23 @@ max-width: 100% !important;
 .tt-span-12 {
 max-width: 100%!important;
 }
+
+/* Tiedition use the hNews microformat 
+-------------------------------------------------- */
+.tiedition .entry-header { }
+.tiedition .entry-title { }
+.tiedition .entry-summary { }
+.tiedition .entry-content-asset { }
+.tiedition .entry-content { }
+.tiedition .byline { }
+.tiedition .updated { }
+.tiedition .entry-tags { }
+
+/* Tiedition entry
+-------------------------------------------------- */
 .tiedition-title {
-  margin: 10px 0!important;
-  padding: 10px 0!important;
+  margin: 0 0 10px!important;
+  padding: 0 0 10px!important;
   font-size: 16px!important;
   font-family: inherit!important;
   border-bottom:1px solid #eee!important;
