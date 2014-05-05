@@ -32,6 +32,12 @@ $("a[href=#]").click(function(e) {
 <link rel="shortcut icon" href="/favicon.ico">
 ```
 
+* 블로거 이름의 티스토리 치환자를 수정합니다. thx 
+
+``` html
+<span class="fn">[##_article_rep_author_##]</span>
+```
+
 * footer의 `write`를 대문자로 수정합니다. thx [sms200207](https://github.com/sms200207)
 * 메타 태그에서 chrome=1을 삭제합니다. 
 
