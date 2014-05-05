@@ -27,7 +27,8 @@ $("a[href=#]").click(function(e) {
 <time class="updated" datetime="티스토리 날짜 치환자" pubdate>
 ```
 
-* 파비콘 경로를 수정합니다. `./images`를 삭제합니다. 파비콘 뿐만 아니라 터치 아이콘을 유저의 아이콘으로 수정해서 사용하시기 바랍니다. 
+* 파비콘 경로를 수정합니다. `./images`를 삭제합니다. 파비콘 뿐만 아니라 터치 아이콘을 유저의 아이콘으로 수정해서 사용하시기 바랍니다.  thx [이바구님](http://www.ibagu.co.kr/) 
+
 ``` html
 <link rel="shortcut icon" href="/favicon.ico">
 ```
