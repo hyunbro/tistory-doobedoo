@@ -21,19 +21,23 @@ $("a[href=#]").click(function(e) {
 
 ## HTML
 
-* 마이크로포멧 데이터 구조 중 HTML5의 <time> 태그에 published를 updated로 변경합니다. skin.html에서 `ctrl + f` 명렁어로 모든 `published`를 찾아 `updated`로 변경합니다. publised는 옵셥입니다. 반드시 수정해야하는 사항은 아니지만, 구글 웹마스터도구에서 누락된 `updated` 오류를 해결하기 위해서는 이 변경사항을 적용하시기 바랍니다. 그리고 모든 <time> 태그에 `pubdate`를 추가합니다. thx [블로그인](http://markquery.com/community/7853) 
+* 마이크로포멧 데이터 구조 중 HTML5의 <time> 태그에 published를 updated로 변경합니다. skin.html에서 `ctrl + f` 명렁어로 모든 `published`를 찾아 `updated`로 변경합니다. publised는 옵셥입니다. 반드시 수정해야하는 사항은 아니지만, 구글 웹마스터도구에서 누락된 `updated` 오류를 해결하기 위해서는 이 변경사항을 적용하시기 바랍니다. 그리고 모든 <time> 태그에 `pubdate`를 추가합니다. 10곳을 수정해야 합니다. thx [블로그인](http://markquery.com/community/7853) 
+
+https://github.com/markquery/tistory-doobedoo/commit/c305414265a6cf32472524bbc4b1a19e24ab8972
 
 ``` html
 <time class="updated" datetime="티스토리 날짜 치환자" pubdate>
 ```
 
-* 파비콘 경로를 수정합니다. `./images`를 삭제합니다. 파비콘 뿐만 아니라 터치 아이콘을 유저의 아이콘으로 수정해서 사용하시기 바랍니다.  thx [이바구님](http://www.ibagu.co.kr/) 
+* 파비콘 경로를 수정합니다. `./images`를 삭제합니다. 파비콘 뿐만 아니라 터치 아이콘을 유저의 아이콘으로 수정해서 사용하시기 바랍니다. thx [이바구님](http://www.ibagu.co.kr/) 
 
 ``` html
 <link rel="shortcut icon" href="/favicon.ico">
 ```
 
-* 블로거 이름의 티스토리 치환자를 수정합니다. thx DivaGuskA
+* 블로거 이름의 티스토리 치환자를 수정합니다. 3곳을 수정해야 합니다. thx DivaGuskA님
+
+https://github.com/markquery/tistory-doobedoo/commit/8475db2b93da9b59d778c8c162eefd2eee111b70
 
 ``` html
 <span class="fn">[##_article_rep_author_##]</span>
